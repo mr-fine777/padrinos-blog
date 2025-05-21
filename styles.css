@@ -7,6 +7,11 @@ body {
   align-items: center;
   background-color: #f4f4f4;
   padding: 40px 0;
+  background-image: url('img/bgm.png');
+  background-size: repeat;
+  background-position: center;
+  image-rendering: pixelated;
+  background-attachment: fixed;
 }
 
 h1 {
