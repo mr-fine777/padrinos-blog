@@ -37,6 +37,39 @@ h1 {
   margin-bottom: 40px; /* Add spacing between windows */
 }
 
+.box-window {
+  position: relative;
+  width: 930px;
+  height: 1800px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  background-color: white;
+  padding-top: 100px;
+  padding-bottom: 100px;
+  margin-bottom: 40px;
+  background-image: url('img/boxwindow.png');
+  background-size: cover;
+  background-position: center;
+  image-rendering: pixelated;
+  padding-left: 30px;
+}
+
+.box-window h2 {
+  margin-bottom: -20px;
+}
+
+.box-window h3 {
+  margin-bottom: -10px;
+}
+
+.box-window p {
+  margin-bottom: -20px;
+}
+
 .content {
   flex: 1;
   overflow-y: auto;
@@ -67,6 +100,7 @@ h1 {
   align-items: center;
   width: 720px;
   margin: 20px 0;
+  margin-bottom: 45px;
   background-color: #adadad;
   height: 90px;
 }
