@@ -35,6 +35,7 @@ h1 {
   padding-top: 100px;
   padding-bottom: 100px;
   margin-bottom: 40px; /* Add spacing between windows */
+  box-shadow: 10px 10px;
 }
 
 .box-window {
