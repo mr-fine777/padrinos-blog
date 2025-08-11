@@ -3,14 +3,16 @@
   <head>
     <meta charset="UTF-8">
     <title>Ad</title>
-  </head>
-  <body style="margin:0; padding:0; overflow:hidden;">
     <script type="text/javascript">
       // Refresh the page every 5 seconds (5000 milliseconds)
-      setTimeout(function() {
-        location.reload();
-      }, 5000);
+      window.onload = function() {
+        setInterval(function() {
+          location.reload(true);
+        }, 5000);
+      };
     </script>
+  </head>
+  <body style="margin:0; padding:0; overflow:hidden;">
     <script type="text/javascript">
       atOptions = {
         'key' : '3a7423edbbcc9cf6a3c8a061e9bc0425',
