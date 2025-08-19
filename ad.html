@@ -12,21 +12,29 @@
 	<style>
 	/* Remove default margins and make body take full height */
 	html, body .app, .container, iframe {
+		width: 100px;
 		height: 100%;
 		margin: 0;
 		display: flex;
 		overflow-x: hidden !important;
 		overflow-y: hidden !important;
-
+		top: 0px;
+		left: 0px;
+		-webkit-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
 	.adblock {
+		position: absolute;
+		top: 0;
+		left: 0;
 		width: 300px;
 		height: 250px;
 		background-color: #bba757;
 		display: flex;
 		justify-content: center;
 		align-items: center;
-		top: 0px;
-		left: 0px;
+		overflow-x: hidden !important;
+		overflow-y: hidden !important;
 	}
 
 	.adblock-hold {
@@ -61,7 +69,6 @@
 		z-index: 10;
 		overflow-x: hidden !important;
 		overflow-y: hidden !important;
-
 	}
 	
 	a {
