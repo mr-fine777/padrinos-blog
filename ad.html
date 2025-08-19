@@ -32,11 +32,12 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
-	}
+		z-index: 10;
+}
 
 	.adblock-hold {
-		width: 100%;
-		height: 93%;
+		width: calc(100% - 14px);
+		height: calc(100% - 14px);
 		margin: 7px;
 		background-color: #f4da6e;
 		display: flex;
@@ -45,16 +46,18 @@
 		box-sizing: border-box;
 		padding: 10px;
 		border-radius: 5px;
-	}
-
-	p {
-		margin: 0;
-		font-size: 16px;
-		font-family: sans-serif;
 		text-align: center;
-		color: #b39f57;
+}
+
+	.adblock-hold p {
+		margin: 0;
+		font-size: 14px;
+		font-family: sans-serif;
+		color: #4a3b12;
 		font-weight: bold;
-	}
+}
+
+/* ad container on top */
 	.aditself {
 		position: absolute;
 		top: 0;
@@ -62,11 +65,12 @@
 		width: 300px;
 		height: 250px;
 		z-index: 50;
-	}
-	
-	a {
+		overflow: visible;
+}
+
+	a { 
 		color: #8a5cbd;
-	}
+}
 	</style>
 </head>
 <body>
