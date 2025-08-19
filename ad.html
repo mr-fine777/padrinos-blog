@@ -1,96 +1,100 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-		<script type="text/javascript">
-      window.onload = function() {
-        setInterval(function() {
-          location.reload(true);
-        }, 5000);
-      };
-		</script>
-	<style>
-	/* Remove default margins and make body take full height */
-	html, body .app, .container, iframe {
-		width: 100px;
-		height: 100%;
-		margin: 0;
-		display: flex;
-		top: 0px;
-		left: 0px;
-		-webkit-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-		
-	.adblock {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 300px;
-		height: 250px;
-		background-color: #bba757;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		z-index: 10;
+<meta charset="UTF-8">
+<title>Ad Example</title>
+<script type="text/javascript">
+window.onload = function() {
+    setInterval(function() {
+        location.reload(true);
+    }, 5000);
+};
+</script>
+<style>
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    display: flex;
+    background-color: #fff;
 }
 
-	.adblock-hold {
-		width: calc(100% - 14px);
-		height: calc(100% - 14px);
-		margin: 7px;
-		background-color: #f4da6e;
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		box-sizing: border-box;
-		padding: 10px;
-		border-radius: 5px;
-		text-align: center;
+.adblock {
+    position: relative;
+    width: 300px;
+    height: 250px;
+    background-color: #bba757;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-	.adblock-hold p {
-		margin: 0;
-		font-size: 14px;
-		font-family: sans-serif;
-		color: #4a3b12;
-		font-weight: bold;
+.adblock-hold {
+    position: relative;
+    width: calc(100% - 14px);
+    height: calc(100% - 14px);
+    margin: 7px;
+    background-color: #f4da6e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 10;
 }
 
-/* ad container on top */
-	.aditself {
-		position: absolute;
-		top: 0;
-		left: 0;
-		width: 100%
-		height: 100%
-		z-index: 50;
-		overflow: visible;
+.adblock-hold p {
+    margin: 0;
+    font-size: 14px;
+    font-family: sans-serif;
+    color: #99894a;
+    font-weight: bold;
 }
 
-	a { 
-		color: #8a5cbd;
-		z-index: 10;
+.aditself {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background-color: transparent; /* keep transparent to show ad */
+    pointer-events: none; /* allows clicks to pass through */
 }
-	</style>
+
+.aditself iframe {
+    pointer-events: auto; /* iframe itself remains clickable */
+}
+
+a { 
+    color: #8a5cbd;
+}
+</style>
 </head>
 <body>
-	<div class="adblock">
-		<div class="adblock-hold">
-			<p>Ads keep Threadline free, if you want to allow ads on Threadline, please go <a href="https://www.padrinos.blog/">here</a>, open your adblocker and click "Pause on this site"</p>
-		</div>
-	</div>
-<div class="aditself">
-	<script type="text/javascript">
-		atOptions = {
-		'key' : '3a7423edbbcc9cf6a3c8a061e9bc0425',
-		'format' : 'iframe',
-		'height' : 250,
-		'width' : 300,
-		'params' : {}
-		};
-	</script>
-	<script type="text/javascript" src="//www.highperformanceformat.com/3a7423edbbcc9cf6a3c8a061e9bc0425/invoke.js"></script>
+<div class="adblock">
+    <div class="adblock-hold">
+        <p>
+            Ads keep Threadline free, if you want to allow ads on Threadline, please go 
+            <a href="https://www.padrinos.blog/" target="_blank">here</a>, open your adblocker and click "Pause on this site"
+        </p>
+    </div>
+    <div class="aditself">
+        <script type="text/javascript">
+        atOptions = {
+            'key' : '3a7423edbbcc9cf6a3c8a061e9bc0425',
+            'format' : 'iframe',
+            'height' : 250,
+            'width' : 300,
+            'params' : {}
+        };
+        </script>
+        <script type="text/javascript" src="//www.highperformanceformat.com/3a7423edbbcc9cf6a3c8a061e9bc0425/invoke.js"></script>
+    </div>
 </div>
 </body>
 </html>
