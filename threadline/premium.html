@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <style>
+html, body {
+    overscroll-behavior: none;
+    margin: 0;
+	background: linear-gradient(135deg, #8858bb 0%, #5f3d84 100%);
+	min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
+	user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.container {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between logo and button */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Add some padding */
+}
+
+.logo {
+    /* Add styles for the logo */
+    font-size: 24px; /* Example size */
+    color: white; /* Example color */
+}
+
+.headerbutton {
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button {
+  background-color: transparent;
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Padding for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  color: #f4da6e; /* Text color */
+  font-size: 20px; /* Example size */
+}
+
+.tiered-hero-cards {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between cards */
+    padding: 20px; /* Add some padding around the container */
+	margin-left: 50px;
+	margin-right: 50px;
+}
+
+.card {
+    background-color: #fff; /* Background color for the cards */
+    color: #333; /* Text color */
+    padding: 40px; /* Padding inside the cards */
+    border: 2px solid #bba757; /* Border for the cards */
+    border-radius: 8px; /* Rounded corners */
+    flex: 1; /* Allow cards to grow equally */
+    margin: 0 10px; /* Margin between cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+	font-size: 25px;
+}
+
+.card p{
+	font-size: 18px
+}
+/* Optional: Remove margin for the first and last card */
+.card:first-child {
+    margin-left: 0; /* No left margin for the first card */
+}
+
+.card:last-child {
+    margin-right: 0; /* No right margin for the last card */
+}
+
+.changelog {
+    background-color: #fff; /* Background color for the cards */
+    color: #333; /* Text color */
+    padding: 20px; /* Padding inside the cards */
+    border: 2px solid #bba757; /* Border for the cards */
+    border-radius: 8px; /* Rounded corners */
+    flex: 1; /* Allow cards to grow equally */
+	margin: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+	height: 365px;
+}
+
+.changelog h3 {
+	font-size: 25px;
+}
+
+.changelog p {
+	font-size: 18px;
+}
+
+.fancy-hr {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px 0;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.fancy-hr .line {
+	flex: 1;
+	height: 2px;
+	background-color: #f4da6e;
+	border-radius: 8px;
+}
+
+.fancy-hr img {
+	margin: 0 15px;
+	height: 30px; /* adjust size */
+}
+
+.centerdownload {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #bba757;
+	border-radius: 8px;
+	margin-top: 50px;
+}
+
+.downloaders {
+	color: #bba757;
+	background-color: transparent;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 30px;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.btn {
+	background-color: transparent;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	color: #f4da6e;
+	font-size: 20px;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.image-placer {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 100px;
+	padding: 20px;
+	justify-content: center;
+}
+
+
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="logo">
+      <a href="https://www.padrinos.blog/threadline-premium.html">
+  <img src="threadline/img.png" style="max-height: 75px; user-select: none;">
+</a>
+    </div>
+	<div class="headerbutton">
+		<a href="https://addons.mozilla.org/en-US/firefox/addon/threadline/" class="btn">Firefox</a>
+		<a href="https://chromewebstore.google.com/detail/threadline/jaepjofibedopopohhifnaohihambnco" class="btn">Chrome</a>
+		<a href="https://google.com" class="btn">Premium</a>
+		<a href="mailto:conway.bat@gmail.com" class="btn">Contact</a>
+	</div>
+</div>
+  <div class="tiered-hero-cards">
+    <div class="card">
+	<h3 style="margin-top: 0px;"> Threadline Premium </h3>
+	<p>Threadline Premium gives you the ultimate design freedom for just $2.95/month. Enjoy a completely ad-free experience, customize your Roblox template workspace with your own background images, and export your templates without the Threadline watermark. Upgrade today and create without limits. All for only $2.75 a month!</p>
+	<h3>How to implement </h3>
+	<p>To implement Threadline Premium, go on your browser with Threadline installed and click on the lock icon, from there it will copy your threadline access code. Then go to the button on the bottom of the page, and paste it in the "Threadline Access Code" box.</p>
+	<div class="image-placer">
+	<img src="threadline/thread1.png"><img src="threadline/thread2.png">
+	</div>
+	<p>And our API will handle the rest, enjoy never seeing ads again, custom templates, and much more! </p>
+	<div class="centerdownload">
+	<a href="https://buy.stripe.com/bJe6oHfYh0tCcnuaPr73G01" class="downloaders">Buy</a>
+	</div>
+</div>
+</body>
+</html>
