@@ -1,90 +1,246 @@
+<!DOCTYPE html>
 <html><head>
-<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6414439003761757" crossorigin="anonymous"></script>
-  <meta charset="UTF-8">
-  <title>Padrino's Blog</title>
-  <link rel="stylesheet" href="styles.css">
-  <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Threadline</title>
+    <link rel="icon" href="threadline/iconic.png" type="image/png">
   <style>
-    .content a {
-      color: #9631a6;
-      text-decoration: none;
-    }
-      .download-button {
-      display: block;
-      width: 400px;
-      height: 100px;
-      position: relative;
-      border: none;
-      cursor: pointer;
-      margin: 20px auto;
-      margin-top: 100px;
-      color: white;
-      font-size: 40px;
-      background: none;
-      z-index: 1;
-      box-shadow: 10px 10px black;
-    }
-    .download-button::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-image: url('img/button.png');
-      background-size: cover;
-      background-position: center;
-      z-index: -1;
-      transition: filter 0.3s ease;
-      text-decoration: none;
-    }
-    .download-button:hover::before {
-      filter: brightness(0.8);
-      text-decoration: none;
-    }
-    a {
-      text-decoration: none;
-    }
-	
-	.image-placer {
-	  display: flex;
-	  flex-direction: row;
-	  align-items: center;
-	  gap: 30px;
-	  padding: 20px;
-	}
-	
-	.boat {
-	  display: flex;
-	  flex-direction: row;
-	  align-items: center;
-	  gap: 200px;
-	}
-	
-	p {
-	  font-weight: normal;
-	}
-	
-	</style>
+html, body {
+    overscroll-behavior: none;
+    margin: 0;
+	background: linear-gradient(135deg, #8858bb 0%, #5f3d84 100%);
+	min-height: 100vh; /* Ensures the body takes at least the full height of the viewport */
+	user-select: none;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    color: white;
+}
+
+.container {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between logo and button */
+    align-items: center; /* Center items vertically */
+    padding: 20px; /* Add some padding */
+}
+
+.logo {
+    /* Add styles for the logo */
+    font-size: 24px; /* Example size */
+    color: white; /* Example color */
+}
+
+.headerbutton {
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button {
+  background-color: transparent;
+  border: none; /* Remove border */
+  padding: 10px 20px; /* Padding for the button */
+  cursor: pointer; /* Pointer cursor on hover */
+  color: #f4da6e; /* Text color */
+  font-size: 20px; /* Example size */
+}
+
+.tiered-hero-cards {
+    display: flex; /* Use Flexbox for layout */
+    justify-content: space-between; /* Space between cards */
+    padding: 20px; /* Add some padding around the container */
+}
+
+.card {
+    background-color: #fff; /* Background color for the cards */
+    color: #333; /* Text color */
+    padding: 40px; /* Padding inside the cards */
+    border: 2px solid #bba757; /* Border for the cards */
+    border-radius: 8px; /* Rounded corners */
+    flex: 1; /* Allow cards to grow equally */
+    margin: 0 10px; /* Margin between cards */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+	font-size: 25px;
+}
+
+.card p{
+	font-size: 18px
+}
+/* Optional: Remove margin for the first and last card */
+.card:first-child {
+    margin-left: 0; /* No left margin for the first card */
+}
+
+.card:last-child {
+    margin-right: 0; /* No right margin for the last card */
+}
+
+.changelog {
+    background-color: #fff; /* Background color for the cards */
+    color: #333; /* Text color */
+    padding: 20px; /* Padding inside the cards */
+    border: 2px solid #bba757; /* Border for the cards */
+    border-radius: 8px; /* Rounded corners */
+    flex: 1; /* Allow cards to grow equally */
+	margin: 20px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional shadow for depth */
+	height: 365px;
+}
+
+.changelog h3 {
+	font-size: 25px;
+}
+
+.changelog p {
+	font-size: 18px;
+}
+
+.fancy-hr {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 20px 0;
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+.fancy-hr .line {
+	flex: 1;
+	height: 2px;
+	background-color: #f4da6e;
+	border-radius: 8px;
+}
+
+.fancy-hr img {
+	margin: 0 15px;
+	height: 30px; /* adjust size */
+}
+
+.centerdownload {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	border: 2px solid #bba757;
+	border-radius: 8px;
+	margin-top: 50px;
+}
+
+.downloaders {
+	color: #bba757;
+	background-color: transparent;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	font-size: 20px;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.btn {
+	background-color: transparent;
+	border: none;
+	padding: 10px 20px;
+	cursor: pointer;
+	color: #f4da6e;
+	font-size: 20px;
+	text-decoration: none;
+	display: inline-block;
+}
+
+
+  </style>
 </head>
 <body>
-
-<div class="window">
-  <div class="content">
-    <div class="boat"> <h1>Threadline Premium</h1><img src="img/threadline.png"> </div>
-	<p>Threadline Premium gives you the ultimate design freedom for just $2.95/month. Enjoy a completely ad-free experience, customize your Roblox template workspace with your own background images, and export your templates without the Threadline watermark. Upgrade today and create without limits. All for only $2.75 a month!</p>
-	<h3> How to implement <h3>
-	<div class="image-placer">
-	<img src="img/thread1.png"><img src="img/thread2.png">
+<div class="container">
+  <div class="logo">
+      <img src="threadline/img.png" style="max-height: 75px; user-select: none;">
+    </div>
+	<div class="headerbutton">
+		<a href="https://addons.mozilla.org/en-US/firefox/addon/threadline/" class="btn">Firefox</a>
+		<a href="https://chromewebstore.google.com/detail/threadline/jaepjofibedopopohhifnaohihambnco" class="btn">Chrome</a>
+		<a href="https://google.com" class="btn">Premium</a>
+		<a href="mailto:conway.bat@gmail.com" class="btn">Contact</a>
 	</div>
-	<p> And our API will handle the rest, enjoy never seeing ads again, custom templates, and much more! </p>
-      <a href="https://buy.stripe.com/bJe6oHfYh0tCcnuaPr73G01">
-        <button class="download-button">Buy now!</button>
-      </a>
-	<p> If you have any issues, or issues with purchasing please contact me at conway.bat@gmail.com</p>
-  </div>
-  <div class="overlay"></div>
+</div>
+  <div class="tiered-hero-cards">
+    <div class="card">Firefox
+	<p> Download threadline for free Firefox here! </p>
+	<div class="centerdownload">
+	<a href="https://addons.mozilla.org/en-US/firefox/addon/threadline/" class="downloaders">Download</a>
+	</div>
+	</div>
+    <div class="card">Chrome
+	<p> Download threadline for free Firefox here! </p>
+	<div class="centerdownload">
+	<a href="https://chromewebstore.google.com/detail/threadline/jaepjofibedopopohhifnaohihambnco" class="downloaders">Download</a>
+	</div>
+	</div>
+    <div class="card">Premium
+	<p> Setup Premium for your Threadline extension here!</p>
+	<div class="centerdownload">
+	<a href="https://google.com" class="downloaders">Download</a>
+	</div>
+	</div>
 </div>
 
+<div class="fancy-hr">
+  <span class="line"></span>
+  <img src="threadline/icon.png"/>
+  <span class="line"></span>
+</div>
 
-</body></html>
+<div class="changelog">
+<h3>Threadline 1.5.0 </h3>
+<p>• Implemented new Premium features, allowing an ad free experience, no watermarks, custom templates, and much more.
+<br>
+• Updated CSS
+<br>
+• Updated JS
+<br>
+• Fixed watermarking for TShirts
+<br>
+• Bug fixes
+</p>
+</div>
+<div class="changelog">
+<h3>Threadline 1.3.0 </h3>
+<p>
+• Added logo
+<br>
+• Removed User-Select in CSS
+<br>
+• Bug fixes
+<p>
+</div>
+<div class="changelog">
+<h3>Threadline 1.2.0 </h3>
+<p>• Added watermark on downloaded images
+<br>
+• Updated download format
+<br>
+• Bug fixes
+</p>
+</div>
+<div class="changelog">
+<h3>Threadline 1.1.0 </h3>
+<p>• Removed Ad replacement, instead displaying an Ad inside of the extension itself
+<br>
+• Bug fixes
+<br>
+• API updates<p>
+</div>
+<div class="changelog">
+<h3>Threadline 1.0.0 </h3>
+<p>Launch<p>
+</div>
+
+</body>
+</html>
