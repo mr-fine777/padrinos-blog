@@ -144,6 +144,8 @@ button {
 	font-size: 30px;
 	text-decoration: none;
 	display: inline-block;
+	width: 100%;
+	text-align: center;
 }
 
 .btn {
@@ -158,12 +160,21 @@ button {
 }
 
 .image-placer {
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-	gap: 100px;
-	padding: 20px;
-	justify-content: center;
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+}
+
+.image-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.image-item h4 {
+  margin-top: 8px;
+  color: #333;
+  font-weight: normal;
 }
 
 
@@ -186,13 +197,31 @@ button {
   <div class="tiered-hero-cards">
     <div class="card">
 	<h3 style="margin-top: 0px;"> Threadline Premium </h3>
-	<p>Threadline Premium gives you the ultimate design freedom for just $2.95/month. Enjoy a completely ad-free experience, customize your Roblox template workspace with your own background images, and export your templates without the Threadline watermark. Upgrade today and create without limits. All for only $2.75 a month!</p>
+	<p>Threadline Premium gives you the ultimate design freedom for just $2.75/month. Enjoy a completely ad-free experience, customize your Roblox template workspace with your own background images, and export your templates without the Threadline watermark. Upgrade today and create without limits. All for only $2.75 a month!</p>
 	<h3>How to implement </h3>
 	<p>To implement Threadline Premium, go on your browser with Threadline installed and click on the lock icon, from there it will copy your threadline access code. Then go to the button on the bottom of the page, and paste it in the "Threadline Access Code" box.</p>
 	<div class="image-placer">
-	<img src="thread1.png"><img src="thread2.png">
+	<img src="thread1.png" style="background: linear-gradient(135deg, #8858bb 0%, #5f3d84 100%); max-height:500px; border: 2px solid #bba757; border-radius: 8px;"><img src="thread2.png" style="background: linear-gradient(135deg, #8858bb 0%, #5f3d84 100%); max-height:500px; border: 2px solid #bba757; border-radius: 8px;">
 	</div>
 	<p>And our API will handle the rest, enjoy never seeing ads again, custom templates, and much more! </p>
+	<h3>FAQ</h3>
+	<p>One of my most asked question is what do you mean by a custom template? Well upon downloading a Roblox Classic Clothing template with Threadline, you receive a watermarked image. Instead of having the watermarked template, why not have your own custom template for all clothes you upload? Never worry about incorrect positioning, layering, or even opening up an image editor for that matter, simply use our custom template system, upload absolutely any image, and viola, every single shirt you download will have the template you uploaded forever, unless you want to change it, and if you do just click the upload button like usual, and viola.<p>
+<div class="image-placer" style="gap: 10px;">
+  <div class="image-item">
+    <img src="normal1.png" style="background: linear-gradient(135deg, #8858bb 0%, #5f3d84 100%); max-height:300px; border: 2px solid #bba757; border-radius: 8px;">
+    <h4>Watermarked Image</h4>
+  </div>
+  <div class="image-item">
+    <img src="custom1.png" style="max-height:300px; border: 2px solid #bba757; border-radius: 8px;background: linear-gradient(135deg, #8858bb 0%, #5f3d84 100%);">
+    <h4>Uploaded Image</h4>
+  </div>
+  <div class="image-item">
+    <img src="custom2.png" style="max-height:300px; border: 2px solid #bba757; border-radius: 8px; background: linear-gradient(135deg, #8858bb 0%, #5f3d84 100%); background-repeat: repeat;">
+    <h4>Custom Image</h4>
+  </div>
+</div>
+	<p> How to upload it is a different question, the main thing is dependant on your browser, it's more or less the same. Click the Upload button after you've subscribed to Threadline Premium. From there if you're on Chrome, an upload file box will appear, and you will upload whatever picture you want. If you're on Firefox, a new tab will appear that will let you upload whatever picture you want.</p>
+	<p> If you have any questions, complaints, or require support please feel free to contact me. Just scroll up and click the "Contact" button!<p>
 	<div class="centerdownload">
 	<a href="https://buy.stripe.com/bJe6oHfYh0tCcnuaPr73G01" class="downloaders">Buy</a>
 	</div>
