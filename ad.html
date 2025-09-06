@@ -23,105 +23,100 @@ window.onload = function() {
 <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 
 
-<style>
-html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    display: flex;
-    background-color: #fff;
-}
+  <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            align-items: center;
+            background-color: #fff;
+        }
 
-.adblock {
-    position: relative;
-    width: 300px;
-    height: 250px;
-    background-color: #bba757;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
+        .adblock {
+            position: relative;
+            width: 300px;
+            height: 250px;
+            background-color: #bba757;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
 
-.adblock-hold {
-    position: relative;
-    width: calc(100% - 14px);
-    height: calc(100% - 14px);
-    margin: 7px;
-    background-color: #f4da6e;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-sizing: border-box;
-    padding: 10px;
-    border-radius: 5px;
-    text-align: center;
-    z-index: 10;
-}
+        .adblock-hold {
+            position: relative;
+            width: calc(100% - 14px);
+            height: calc(100% - 14px);
+            margin: 7px;
+            background-color: #f4da6e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-sizing: border-box;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            z-index: 10;
+        }
 
-.adblock-hold p {
-    margin: 0;
-    font-size: 14px;
-    font-family: sans-serif;
-    color: #99894a;
-    font-weight: bold;
-}
+        .adblock-hold p {
+            margin: 0;
+            font-size: 14px;
+            font-family: sans-serif;
+            color: #99894a;
+            font-weight: bold;
+        }
 
-.aditself {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 50;
-    background-color: transparent; /* keep transparent to show ad */
-    pointer-events: none; /* allows clicks to pass through */
-}
+        .aditself {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 50;
+            background-color: transparent;
+            pointer-events: none;
+        }
 
-.aditself iframe {
-    pointer-events: auto; /* iframe itself remains clickable */
-}
+        .aditself iframe {
+            pointer-events: auto;
+        }
 
-a { 
-    color: #8a5cbd;
-}
+        a { 
+            color: #8a5cbd;
+        }
 
-  .helper {
-	width: 300px;
-	margin-top: 200px;
-	text-align: center;
-	font-family: sans-serif;
-    color: #bba757;
-    font-weight: bold;
-	font-size: 24px
-	z-index: 9999;
-}
-
-.container-38a5b26db9f8925501b37712644ba519 {
-  width: 300px;
-  height: 200px;
-}
-</style>
+        .helper {
+            width: 300px;
+            margin-top: -80px;
+            text-align: center;
+            font-family: sans-serif;
+            color: #f4da6e;
+            font-weight: bold;
+            font-size: 24px;
+            z-index: 99999;
+        }
+    </style>
 </head>
 <body>
-<!-- <iframe src="https://www.revenuecpmgate.com/vqyxn9rzs?key=6bdf0e7d8d1a5b7d3f016ddfd4663d7f" width="0" height="0" style="border:0;"> -->
-</iframe>
-<div class="adblock">
-    <div class="adblock-hold">
-        <p>
-            Ads keep Threadline free, if you want to allow ads on Threadline, please go 
-            <a href="https://www.padrinos.blog/" target="_blank">here</a>, open your adblocker and click "Pause on this site"
-        </p>
+    <!-- <iframe src="https://www.revenuecpmgate.com/vqyxn9rzs?key=6bdf0e7d8d1a5b7d3f016ddfd4663d7f" width="0" height="0" style="border:0;"></iframe> -->
+
+    <div class="adblock">
+        <div class="adblock-hold">
+            <p>
+                Ads keep Threadline free. If you want to allow ads on Threadline, please go 
+                <a href="https://www.padrinos.blog/" target="_blank">here</a>, open your adblocker and click "Pause on this site".
+            </p>
+        </div>
+
+        <div class="aditself">
+            <iframe src="//a.magsrv.com/iframe.php?idzone=5716694&size=300x250" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+			<div class="helper">
+            <p>NEVER CLICK MY ADS</p>
+        </div>
+        </div>
     </div>
-    <div class="aditself">
-<div>
-<iframe src="//a.magsrv.com/iframe.php?idzone=5716694&size=300x250" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
-</div>
-		    </div>
-      <div class="helper">
-<p> NEVER CLICK MY ADS </p>
-</div>
-</div>
+
 </body>
 </html>
