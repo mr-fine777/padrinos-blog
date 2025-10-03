@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Redirecting...</title>
+  <style>
+    body {
+      margin: 0;
+      background: linear-gradient(135deg, #8858bb 0%, #5f3d84 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      flex-direction: column;
+      font-family: sans-serif;
+    }
+
+    img {
+      max-width: 200px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      gap: 20px;
+    }
+
+    .redirect-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      border: solid 2px #f4da6e;
+      border-radius: 6px;
+      background-color: transparent;
+      color: #f4da6e;
+      cursor: pointer;
+      transition: transform 0.3s;
+      text-decoration: none;
+    }
+
+    .redirect-button:hover {
+      transform: scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <img src="icon.png" alt="Loading Icon" />
+  <div class="button-container">
+    <a class="redirect-button" href="https://chromewebstore.google.com/detail/threadline/jaepjofibedopopohhifnaohihambnco" target="_blank">Chrome</a>
+    <a class="redirect-button" href="https://addons.mozilla.org/en-US/firefox/addon/threadline/" target="_blank">Firefox</a>
+  </div>
+</body>
+</html>
