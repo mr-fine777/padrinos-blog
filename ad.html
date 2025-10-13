@@ -14,9 +14,22 @@
 <title>Ad Example</title>
 <script type="text/javascript">
 window.onload = function() {
-    setInterval(function() {
-        location.reload(true);
-    }, 5000);
+    // Retrieve the refresh count from localStorage (or initialize it to 0)
+    let refreshCount = parseInt(localStorage.getItem('refreshCount')) || 0;
+
+    // Check if the refresh count is less than 30
+    if (refreshCount < 30) {
+        // Increment the refresh count and store it back in localStorage
+        refreshCount++;
+        localStorage.setItem('refreshCount', refreshCount);
+
+        // Set up the interval to refresh the page
+        setInterval(function() {
+            location.reload(true);
+        }, 5000);
+    } else {
+        console.log("Maximum refresh limit reached.");
+    }
 };
 </script>
 
@@ -74,7 +87,7 @@ window.onload = function() {
             z-index: 50;
             background-color: white;
             pointer-events: none;
-			font-color: transparent;
+			color: transparent;
         }
 
         .aditself iframe {
