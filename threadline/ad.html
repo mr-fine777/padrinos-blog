@@ -34,8 +34,6 @@ window.onload = function() {
 </script>
 
 <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-
-
   <style>
         html, body {
             margin: 0;
@@ -78,18 +76,16 @@ window.onload = function() {
             font-weight: bold;
         }
 
-        .aditself {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 300px;
-            height: 250px;
-            z-index: 50;
-            background-color: white;
-            pointer-events: none;
-			color: transparent;
-        }
-
+.aditself {
+	position: absolute; 
+	top: -10px;
+	left: -20px;
+	width: 353px;
+	z-index: 50;
+	background-color: transparent;
+	pointer-events: none;
+	color: transparent;
+}
         .aditself iframe {
             pointer-events: auto;
         }
@@ -101,9 +97,10 @@ window.onload = function() {
 	  	img {
 			max-height: 48px;
 			z-index: 999;
-			margin-left: 160px;
-  			margin-top: 150px;
+			margin-left: 240px;
+  			margin-top: 200px;
 			opacity: 0.8;
+			position: absolute;
 		}
 
 	  	.spot {
@@ -115,9 +112,19 @@ window.onload = function() {
 			width: 250px;
 			border: none;		
 		}
+.blox {
+  background-color: #bba757;
+  height: 250px;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
     </style>
 </head>
 <body>
+	<div class="blox"
     <div class="adblock">
         <img src="icon.png"><iframe src="https://www.revenuecpmgate.com/vqyxn9rzs?key=6bdf0e7d8d1a5b7d3f016ddfd4663d7f" width="0" height="0" style="border:0;"></iframe></img>
         <div class="aditself">
