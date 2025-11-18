@@ -85,7 +85,22 @@
     </style>
 </head>
 <body>
-<iframe src="https://www.padrinos.blog/threadline/ad.html" width="300" height="250" style="border:0;"></iframe>
+<iframe 
+  id="autoRefreshFrame"
+  src="https://www.padrinos.blog/threadline/ad.html"
+  width="300"
+  height="250"
+  style="border:0;">
+</iframe>
+
+<script>
+  setInterval(() => {
+    const frame = document.getElementById("autoRefreshFrame");
+    // Force refresh by resetting the src with a cache-buster
+    frame.src = frame.src.split("?")[0] + "?t=" + Date.now();
+  }, 5000); // 5 seconds
+</script>
+
 <iframe
   src="https://www.effectivegatecpm.com/uuh80w2n1b?key=b0e544a5bda763f4257500c0d0edfe8b"
   width="300"
