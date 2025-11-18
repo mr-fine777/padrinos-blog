@@ -14,22 +14,9 @@
 <title>Ad Test</title>
 <script type="text/javascript">
 window.onload = function() {
-    // Retrieve the refresh count from localStorage (or initialize it to 0)
-    let refreshCount = parseInt(localStorage.getItem('refreshCount')) || 0;
-
-    // Check if the refresh count is less than 30
-    if (refreshCount < 9999999999) {
-        // Increment the refresh count and store it back in localStorage
-        refreshCount++;
-        localStorage.setItem('refreshCount', refreshCount);
-
-        // Set up the interval to refresh the page
-        setInterval(function() {
-            location.reload(true);
-        }, 5000);
-    } else {
-        console.log("Maximum refresh limit reached.");
-    }
+    setInterval(function() {
+        location.reload(true);
+    }, 5000);
 };
 </script>
 
