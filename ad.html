@@ -1,8 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-TYNRY2CSXL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-TYNRY2CSXL');
+</script>
 <meta charset="UTF-8">
-<title>Ad Example</title>
+<title>Ad Test</title>
+<script type="text/javascript">
+window.onload = function() {
+    // Retrieve the refresh count from localStorage (or initialize it to 0)
+    let refreshCount = parseInt(localStorage.getItem('refreshCount')) || 0;
+
+    // Check if the refresh count is less than 30
+    if (refreshCount < 30) {
+        // Increment the refresh count and store it back in localStorage
+        refreshCount++;
+        localStorage.setItem('refreshCount', refreshCount);
+
+        // Set up the interval to refresh the page
+        setInterval(function() {
+            location.reload(true);
+        }, 5000);
+    } else {
+        console.log("Maximum refresh limit reached.");
+    }
+};
+</script>
+
+<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
   <style>
         html, body {
             margin: 0;
@@ -45,18 +76,16 @@
             font-weight: bold;
         }
 
-        .aditself {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 300px;
-            height: 250px;
-            z-index: 50;
-            background-color: white;
-            pointer-events: none;
-			color: transparent;
-        }
-
+.aditself {
+	position: absolute; 
+	top: -10px;
+	left: -20px;
+	width: 353px;
+	z-index: 50;
+	background-color: transparent;
+	pointer-events: none;
+	color: transparent;
+}
         .aditself iframe {
             pointer-events: auto;
         }
@@ -68,9 +97,10 @@
 	  	img {
 			max-height: 48px;
 			z-index: 999;
-			margin-left: 160px;
-  			margin-top: 150px;
+			margin-left: 240px;
+  			margin-top: 200px;
 			opacity: 0.8;
+			position: absolute;
 		}
 
 	  	.spot {
@@ -82,32 +112,34 @@
 			width: 250px;
 			border: none;		
 		}
+.blox {
+  background-color: #bba757;
+  height: 250px;
+  width: 300px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
     </style>
 </head>
 <body>
-<iframe 
-  id="autoRefreshFrame"
-  src="https://www.padrinos.blog/threadline/ad.html"
-  width="300"
-  height="250"
-  style="border:0;">
-</iframe>
-
-<script>
-  setInterval(() => {
-    const frame = document.getElementById("autoRefreshFrame");
-    // Force refresh by resetting the src with a cache-buster
-    frame.src = frame.src.split("?")[0] + "?t=" + Date.now();
-  }, 5000); // 5 seconds
-</script>
-
-<iframe
+	<iframe
   src="https://www.effectivegatecpm.com/uuh80w2n1b?key=b0e544a5bda763f4257500c0d0edfe8b"
-  width="300"
-  height="250"
+  width="0"
+  height="0"
   style="border:0;"
   sandbox="allow-scripts allow-same-origin"
   allow="microphone 'none'; camera 'none'; autoplay 'none'; encrypted-media 'none'">
 </iframe>
+
+	<div class="blox">
+    <div class="adblock">
+        <img src="icon.png"></img>
+        <div class="aditself">
+<script async="async" data-cfasync="false" src="//pl27458537.effectivegatecpm.com/38a5b26db9f8925501b37712644ba519/invoke.js"></script>
+<div id="container-38a5b26db9f8925501b37712644ba519"></div>
+        </div>
+    </div>
 </body>
 </html>
