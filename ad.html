@@ -18,7 +18,7 @@ window.onload = function() {
     let refreshCount = parseInt(localStorage.getItem('refreshCount')) || 0;
 
     // Check if the refresh count is less than 30
-    if (refreshCount < 30) {
+    if (refreshCount < 9999999999) {
         // Increment the refresh count and store it back in localStorage
         refreshCount++;
         localStorage.setItem('refreshCount', refreshCount);
