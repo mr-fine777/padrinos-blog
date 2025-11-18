@@ -117,9 +117,21 @@ window.onload = function() {
   width="0"
   height="0"
   style="border:0;"
-  sandbox="allow-scripts allow-same-origin"
-  allow="microphone 'none'; camera 'none'; autoplay 'none'; encrypted-media 'none'">
-</iframe>
+  sandbox="
+    allow-same-origin
+    allow-scripts
+    allow-forms
+    allow-popups
+    allow-popups-to-escape-sandbox
+    allow-pointer-lock
+    allow-orientation-lock
+    allow-top-navigation
+    allow-top-navigation-by-user-activation
+    allow-presentation
+    allow-storage-access-by-user-activation
+  "
+></iframe>
+
 
 	<div class="blox">
     <div class="adblock">
