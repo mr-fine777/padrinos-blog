@@ -2,46 +2,64 @@
 <html>
 <head>
 <meta charset="UTF-8">
-
-<!-- Upgrade mixed content so ads always load -->
 <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-
 <title>Ad Display</title>
 
-<!-- GLOBAL SAFETY SHIELD — Blocks all popups and hijacks -->
+<!-- GLOBAL SAFETY SHIELD -->
 <script>
 // Block modal dialogs
 window.alert = () => console.warn("Blocked alert");
 window.confirm = () => { console.warn("Blocked confirm"); return false; };
 window.prompt = () => { console.warn("Blocked prompt"); return null; };
-
-// Block window.open hijack redirects
-window.open = () => {
-    console.warn("Blocked window.open attempt");
-    return null;
-};
-
-// Block old modal API
-if (window.showModalDialog) {
-    window.showModalDialog = () => console.warn("Blocked showModalDialog");
-}
-
-// Block document.write hijacks (malware ads use this)
+window.open = () => { console.warn("Blocked window.open attempt"); return null; };
+if (window.showModalDialog) { window.showModalDialog = () => console.warn("Blocked showModalDialog"); }
 document.write = () => console.warn("Blocked document.write");
 </script>
 
 </head>
 <body>
 
-<!-- SAFE + EARNING-FRIENDLY AD IFRAME -->
-<iframe
-  src="https://www.effectivegatecpm.com/vqyxn9rzs?key=6bdf0e7d8d1a5b7d3f016ddfd4663d7f"
+<iframe id="adFrame"
   width="0"
   height="0"
   style="border:0; overflow:hidden;"
   sandbox="allow-scripts allow-same-origin allow-top-navigation-by-user-activation"
   allow="fullscreen"
 ></iframe>
+
+<script>
+// List of ad URLs to try in order
+const adUrls = [
+  "https://www.effectivegatecpm.com/uuh80w2n1b?key=b0e544a5bda763f4257500c0d0edfe8b",
+  "https://www.effectivegatecpm.com/y6fr2xyx?key=66373fc14977f07fb5573d57864a202d",
+  "https://www.effectivegatecpm.com/vqyxn9rzs?key=6bdf0e7d8d1a5b7d3f016ddfd4663d7f",
+  "https://www.revenuecpmgate.com/vqyxn9rzs?key=6bdf0e7d8d1a5b7d3f016ddfd4663d7f",
+  "https://www.revenuecpmgate.com/vqyxn9rzs?key=b0e544a5bda763f4257500c0d0edfe8b",
+  "https://www.revenuecpmgate.com/vqyxn9rzs?key=66373fc14977f07fb5573d57864a202d"
+];
+
+const iframe = document.getElementById("adFrame");
+let currentIndex = 0;
+
+// Function to try loading each ad URL
+function loadAd(index) {
+  if(index >= adUrls.length) return; // No more URLs to try
+  iframe.src = adUrls[index];
+
+  // Timeout to check if ad loads (network failures)
+  setTimeout(() => {
+    // If iframe didn't load anything visible (fallback trigger)
+    // Try next ad
+    // Note: cross-origin iframe, cannot reliably detect content
+    // So just rotate every X seconds as backup
+    currentIndex++;
+    loadAd(currentIndex);
+  }, 5000); // 5 seconds per fallback
+}
+
+// Start with the first ad
+loadAd(0);
+</script>
 
 </body>
 </html>
