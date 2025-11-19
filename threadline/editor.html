@@ -1,6 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script>
+// Disable popups globally
+window.alert = function() { console.warn("Blocked alert"); };
+window.confirm = function() { console.warn("Blocked confirm"); return false; };
+window.prompt = function() { console.warn("Blocked prompt"); return null; };
+
+// Also block the outdated window.showModalDialog if present
+if (window.showModalDialog) {
+    window.showModalDialog = function() { console.warn("Blocked modal dialog"); };
+}
+</script>
 <meta charset="UTF-8">
 <title>Ad Example</title>
 </head>
