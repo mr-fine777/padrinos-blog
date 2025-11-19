@@ -1,26 +1,47 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <script>
-// Disable popups globally
-window.alert = function() { console.warn("Blocked alert"); };
-window.confirm = function() { console.warn("Blocked confirm"); return false; };
-window.prompt = function() { console.warn("Blocked prompt"); return null; };
-
-// Also block the outdated window.showModalDialog if present
-if (window.showModalDialog) {
-    window.showModalDialog = function() { console.warn("Blocked modal dialog"); };
-}
-</script>
 <meta charset="UTF-8">
-<title>Ad Example</title>
+
+<!-- Upgrade mixed content so ads always load -->
+<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+
+<title>Ad Display</title>
+
+<!-- GLOBAL SAFETY SHIELD — Blocks all popups and hijacks -->
+<script>
+// Block modal dialogs
+window.alert = () => console.warn("Blocked alert");
+window.confirm = () => { console.warn("Blocked confirm"); return false; };
+window.prompt = () => { console.warn("Blocked prompt"); return null; };
+
+// Block window.open hijack redirects
+window.open = () => {
+    console.warn("Blocked window.open attempt");
+    return null;
+};
+
+// Block old modal API
+if (window.showModalDialog) {
+    window.showModalDialog = () => console.warn("Blocked showModalDialog");
+}
+
+// Block document.write hijacks (malware ads use this)
+document.write = () => console.warn("Blocked document.write");
+</script>
+
 </head>
 <body>
+
+<!-- SAFE + EARNING-FRIENDLY AD IFRAME -->
 <iframe
   src="https://www.effectivegatecpm.com/vqyxn9rzs?key=6bdf0e7d8d1a5b7d3f016ddfd4663d7f"
   width="0"
   height="0"
-  style="border:0;"
+  style="border:0; overflow:hidden;"
+  sandbox="allow-scripts allow-same-origin allow-top-navigation-by-user-activation"
+  allow="fullscreen"
 ></iframe>
+
 </body>
 </html>
