@@ -73,10 +73,30 @@
       border-radius: 8px;
       background: none;
     }
-  </style>
+  .corner-container {
+    position: fixed;
+    bottom: 20px;     /* distance from bottom */
+    right: 20px;      /* distance from right */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;        /* space between the two boxes */
+    z-index: 9999;    /* keep on top */
+  }
 
+  .sticky-box {
+    background: #fff;
+    padding: 12px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  }
+	  
 </head>
 <body>
+<div class="corner-container">
+  <div class="sticky-box">First Box</div>
+  <div class="sticky-box">Second Box</div>
+</div>
+
   <div class="header">
     <a href="index.html">
       <img src="img/icons.png" alt="Icons" class="header-icons">
@@ -1081,6 +1101,7 @@ Again, I don't recommend you do this for your personal phone literally at all. I
 
 </body>
 </html>
+
 
 
 
