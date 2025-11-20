@@ -1,27 +1,42 @@
 <!DOCTYPE html>
 <html>
 <head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-TYNRY2CSXL"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+    <!-- Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TYNRY2CSXL"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){ dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-TYNRY2CSXL');
+    </script>
 
-  gtag('config', 'G-TYNRY2CSXL');
-</script>
-<meta charset="UTF-8">
-<title>Ad Test</title>
-<script type="text/javascript">
-window.onload = function() {
-    setInterval(function() {
-        location.reload(true);
-    }, 5000);
-};
-</script>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
+    <title>Ad Display</title>
 
-<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-  <style>
+    <!-- Auto-reload every 5 seconds -->
+    <script type="text/javascript">
+        window.onload = function() {
+            setInterval(function() {
+                location.reload(true);
+            }, 5000);
+        };
+    </script>
+
+    <!-- GLOBAL SAFETY SHIELD -->
+    <script>
+        window.alert = () => console.warn("Blocked alert");
+        window.confirm = () => { console.warn("Blocked confirm"); return false; };
+        window.prompt = () => { console.warn("Blocked prompt"); return null; };
+        window.open = () => { console.warn("Blocked window.open attempt"); return null; };
+        if (window.showModalDialog) window.showModalDialog = () => console.warn("Blocked showModalDialog");
+        document.write = () => console.warn("Blocked document.write");
+    </script>
+
+    <!-- ACS script -->
+    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+
+    <style>
         html, body {
             margin: 0;
             padding: 0;
@@ -30,7 +45,7 @@ window.onload = function() {
             overflow: hidden;
             align-items: center;
             background-color: #000;
-			user-select: none;
+            user-select: none;
         }
 
         .adblock {
@@ -64,68 +79,99 @@ window.onload = function() {
             font-weight: bold;
         }
 
-.aditself {
-	position: absolute; 
-	top: -10px;
-	left: -20px;
-	width: 353px;
-	z-index: 50;
-	background-color: transparent;
-	pointer-events: none;
-	color: transparent;
-}
+        .aditself {
+            position: absolute;
+            top: -10px;
+            left: -20px;
+            width: 353px;
+            z-index: 50;
+            background-color: transparent;
+            pointer-events: none;
+            color: transparent;
+        }
+
         .aditself iframe {
             pointer-events: auto;
         }
 
-        a { 
-            color: #8a5cbd;
+        a { color: #8a5cbd; }
+
+        img {
+            max-height: 48px;
+            z-index: 999;
+            margin-left: 240px;
+            margin-top: 200px;
+            opacity: 0.8;
+            position: absolute;
         }
 
-	  	img {
-			max-height: 48px;
-			z-index: 999;
-			margin-left: 240px;
-  			margin-top: 200px;
-			opacity: 0.8;
-			position: absolute;
-		}
+        .spot {
+            color: white;
+            margin-left: -50px;
+            margin-top: -20px;
+            transform-origin: 0 0;
+            transform: scale(1.5);
+            width: 250px;
+            border: none;
+        }
 
-	  	.spot {
-			color: white;
-	 		margin-left: -50px;
-	 		margin-top: -20px;
-			transform-origin: 0 0;
-			transform: scale(1.5);
-			width: 250px;
-			border: none;		
-		}
-.blox {
-  background-color: #bba757;
-  height: 250px;
-  width: 300px;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
-}
+        .blox {
+            background-color: #bba757;
+            height: 250px;
+            width: 300px;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+        }
     </style>
 </head>
-<body>
-<iframe
-  src="https://www.padrinos.blog/threadline/editor.html"
-  width="192"
-  height="108"
-  style="border:0; opacity: 0%;"
-></iframe>
 
-	<div class="blox">
-    <div class="adblock">
-        <img src="threadline/icon.png"></img>
-        <div class="aditself">
-<script async="async" data-cfasync="false" src="//pl27458537.effectivegatecpm.com/38a5b26db9f8925501b37712644ba519/invoke.js"></script>
-<div id="container-38a5b26db9f8925501b37712644ba519"></div>
+<body>
+
+    <div class="blox">
+        <div class="adblock">
+            <img src="threadline/icon.png">
+            <div class="aditself">
+                <script async data-cfasync="false" src="//pl27458537.effectivegatecpm.com/38a5b26db9f8925501b37712644ba519/invoke.js"></script>
+                <div id="container-38a5b26db9f8925501b37712644ba519"></div>
+            </div>
         </div>
     </div>
+
+    <iframe id="adFrame"
+        width="300"
+        height="250"
+        style="border:0; overflow:hidden; opacity:0%"
+        sandbox="allow-scripts allow-same-origin allow-top-navigation-by-user-activation"
+        allow="fullscreen">
+    </iframe>
+
+    <script>
+        const adUrls = [
+            "https://www.effectivegatecpm.com/uuh80w2n1b?key=b0e544a5bda763f4257500c0d0edfe8b",
+            "https://www.effectivegatecpm.com/y6fr2xyx?key=66373fc14977f07fb5573d57864a202d",
+            "https://www.effectivegatecpm.com/vqyxn9rzs?key=6bdf0e7d8d1a5b7d3f016ddfd4663d7f",
+            "https://www.revenuecpmgate.com/vqyxn9rzs?key=6bdf0e7d8d1a5b7d3f016ddfd4663d7f",
+            "https://www.revenuecpmgate.com/vqyxn9rzs?key=b0e544a5bda763f4257500c0d0edfe8b",
+            "https://www.revenuecpmgate.com/vqyxn9rzs?key=66373fc14977f07fb5573d57864a202d"
+        ];
+
+        const iframe = document.getElementById("adFrame");
+        let currentIndex = 0;
+
+        function loadAd(index) {
+            if (index >= adUrls.length) return;
+            iframe.src = adUrls[index];
+
+            setTimeout(() => {
+                currentIndex++;
+                loadAd(currentIndex);
+            }, 5000);
+        }
+
+        loadAd(0);
+    </script>
+
 </body>
 </html>
