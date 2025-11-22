@@ -18,6 +18,12 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
   <style>
+    	  :root {
+  --font: #FFDF96;
+  --header: #111214;
+  --body: #363941;
+  --subbody: #212327;
+}
     body {
       margin: 0;
       padding: 0;
@@ -28,7 +34,7 @@
       left: 0;
       right: 0;
       width: 100%;
-      background-color: black;
+      background-color: var(--header);
       padding: 15px 0;
       z-index: 9999;
       margin: 0;
@@ -49,14 +55,14 @@
     .nav-button {
       background: none;
       border: none;
-      color: #f3efd9;
+      color: var(--font);
       font-size: 20px;
       cursor: pointer;
       padding: 5px 10px;
       transition: color 0.3s ease;
     }
     .nav-button:hover {
-      color: #e9e6d4;
+      color: var(--font);
     }
     .download-button {
       display: block;
@@ -67,7 +73,7 @@
       cursor: pointer;
       margin: 20px auto;
       margin-top: 100px;
-      color: white;
+      color: var(--font);
       font-size: 40px;
       background: none;
       z-index: 1;
@@ -176,6 +182,7 @@
 
 </body>
 </html>
+
 
 
 
