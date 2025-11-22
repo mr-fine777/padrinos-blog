@@ -1,13 +1,20 @@
+:root {
+  --font: #FFDF96;
+  --header: #111214;
+  --body: #1a1c1f;
+  --subbody: #212327;
+}
+
 body {
+  color: var(--font);
   margin: 0;
   padding: 0;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: #f4f4f4;
+  background-color: var(--body);
   padding: 40px 0;
-  background-image: url('img/bgm.png');
   background-size: repeat;
   background-position: center;
   image-rendering: pixelated;
@@ -36,11 +43,11 @@ h1 {
   box-sizing: border-box;
   font-size: 29px;
   font-family: Arial, sans-serif;
-  background-color: white;
+  background-color: var(--body);
   padding-top: 100px;
   padding-bottom: 100px;
   margin-bottom: 40px; /* Add spacing between windows */
-  box-shadow: 10px 10px;
+  box-shadow: 10px 10px #111214;
 }
 
 .box-window {
@@ -53,7 +60,7 @@ h1 {
   box-sizing: border-box;
   font-size: 20px;
   font-family: Arial, sans-serif;
-  background-color: white;
+  background-color: var(--body);
   padding-top: 100px;
   padding-bottom: 100px;
   margin-bottom: 40px;
@@ -107,7 +114,7 @@ h1 {
   width: 720px;
   margin: 20px 0;
   margin-bottom: 45px;
-  background-color: #adadad;
+  background-color: var(--body);
   height: 90px;
-  box-shadow: 10px 10px black;
+  box-shadow: 10px 10px #111214;
 }
