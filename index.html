@@ -16,6 +16,13 @@
   <link rel="stylesheet" href="styles.css">
   <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
   <style>
+	  :root {
+  --font: #FFDF96;
+  --header: #111214;
+  --body: #1a1c1f;
+  --subbody: #212327;
+}
+
     body {
       margin: 0;
       padding: 0;
@@ -26,7 +33,7 @@
       left: 0;
       right: 0;
       width: 100%;
-      background-color: black;
+      background-color: var(--header);
       padding: 15px 0;
       z-index: 9999;
       margin: 0;
@@ -47,20 +54,20 @@
     .nav-button {
       background: none;
       border: none;
-      color: #f3efd9;
+	  color: var(--font);
       font-size: 20px;
       cursor: pointer;
       padding: 5px 10px;
       transition: color 0.3s ease;
     }
     .nav-button:hover {
-      color: #e9e6d4;
+      color: var(--font);
     }
     .window {
       margin-top: 60px;
     }
     .content a {
-      color: #9631a6;
+      color: var(--font);
       text-decoration: underline;
     }
     /* Floating Buy Me a Coffee Button */
@@ -1131,6 +1138,7 @@ Again, I don't recommend you do this for your personal phone literally at all. I
 
 </body>
 </html>
+
 
 
 
