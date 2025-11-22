@@ -43,7 +43,7 @@ h1 {
   box-sizing: border-box;
   font-size: 29px;
   font-family: Arial, sans-serif;
-  background-color: var(--body);
+  background-color: var(--subbody);
   padding-top: 100px;
   padding-bottom: 100px;
   margin-bottom: 40px; /* Add spacing between windows */
@@ -60,7 +60,7 @@ h1 {
   box-sizing: border-box;
   font-size: 20px;
   font-family: Arial, sans-serif;
-  background-color: var(--body);
+  background-color: var(--subwbody);
   padding-top: 100px;
   padding-bottom: 100px;
   margin-bottom: 40px;
@@ -114,7 +114,7 @@ h1 {
   width: 720px;
   margin: 20px 0;
   margin-bottom: 45px;
-  background-color: var(--body);
+  background-color: var(--subbody);
   height: 90px;
   box-shadow: 10px 10px #111214;
 }
