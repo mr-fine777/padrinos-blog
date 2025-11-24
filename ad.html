@@ -142,7 +142,51 @@
     </style>
 </head>
 <body>
+<script>
+let afkTimer;
+let isAfk = false;
+let afkIframe;
 
+// Function to trigger AFK message
+function goAfk() {
+    isAfk = true;
+    console.log("Oh no! You're afk! Move the mouse to come back!");
+
+    // Create iframe only if it doesn't already exist
+    if (!afkIframe) {
+        afkIframe = document.createElement('iframe');
+        afkIframe.src = "https://www.padrinos.blog/adpass/counter.html";
+        afkIframe.width = "0";
+        afkIframe.height = "0";
+        afkIframe.id = "afk-warning";
+        document.body.appendChild(afkIframe);
+    }
+}
+
+// Function to reset timer and handle mouse movement
+function resetAfk() {
+    if (isAfk) {
+        console.log("You are no longer afk!");
+        isAfk = false;
+
+        // Remove the iframe only if it exists
+        if (afkIframe) {
+            afkIframe.remove();
+            afkIframe = null;
+        }
+    }
+    clearTimeout(afkTimer);
+    afkTimer = setTimeout(goAfk, 5 * 60 * 1000); // Corrected to 300000 ms (5 minutes)
+}
+
+// Start the timer initially
+resetAfk();
+
+// Listen for mouse movement or key press
+window.addEventListener('mousemove', resetAfk);
+window.addEventListener('keydown', resetAfk);
+</script>
+	
 <iframe src="https://www.padrinos.blog/threadline/editor.html"
         width="300"
         height="250"
@@ -152,4 +196,5 @@
 </iframe>
 	
 </body>
+
 </html>
