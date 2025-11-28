@@ -13,7 +13,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: var(--body);
+  background-image: url("img/snow.gif");
   padding: 40px 0;
   background-size: repeat;
   background-position: center;
