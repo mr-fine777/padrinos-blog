@@ -6,16 +6,23 @@
     <title>300x250 Test Page</title>
     <style>
         body {
-            margin: 0;
-            padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background: #f0f0f0;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100%;
+          background: #f0f0f0;
         }
-        
-        .container {
+
+    .center-wrapper {
+          display: flex;
+          justify-content: center;   /* horizontal */
+          align-items: center;       /* vertical */
+          height: 100%;
+          width: 100%;
+}       
+    .container {
             position: fixed;
             top: 0;
             left: 0;
@@ -33,8 +40,10 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        This is a test page with 300x250 sizes
+  <div class="center-wrapper">
+    <div class="content">
+      Ad format 300x250 Example.
     </div>
+  </div>
 </body>
 </html>
