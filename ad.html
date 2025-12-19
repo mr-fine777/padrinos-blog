@@ -15,13 +15,33 @@
     <title>Ad Display</title>
 
     <!-- Auto-reload every 5 seconds -->
-    <script type="text/javascript">
-        window.onload = function() {
-            setInterval(function() {
-                location.reload(true);
-            }, 8000);
-        };
-    </script>
+<script type="text/javascript">
+(function () {
+    const MAX_RELOADS_PER_DAY = 10;
+    const RELOAD_INTERVAL_MS = 8000;
+
+    const todayKey = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
+    const storageKey = "adReloads_" + todayKey;
+
+    let reloadCount = parseInt(localStorage.getItem(storageKey) || "0", 10);
+
+    if (reloadCount >= MAX_RELOADS_PER_DAY) {
+        return; // frequency cap hit — do nothing
+    }
+
+    setInterval(function () {
+        reloadCount++;
+        localStorage.setItem(storageKey, reloadCount.toString());
+
+        if (reloadCount >= MAX_RELOADS_PER_DAY) {
+            return;
+        }
+
+        location.reload(true);
+    }, RELOAD_INTERVAL_MS);
+})();
+</script>
+
 
     <!-- GLOBAL SAFETY SHIELD -->
     <script>
