@@ -4,33 +4,6 @@
   <meta charset="UTF-8">
   <title>Scaled Ad Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script type="text/javascript">
-(function () {
-    const MAX_RELOADS_PER_DAY = 10;
-    const RELOAD_INTERVAL_MS = 8000;
-
-    const todayKey = new Date().toISOString().slice(0, 10); // YYYY-MM-DD
-    const storageKey = "adReloads_" + todayKey;
-
-    let reloadCount = parseInt(localStorage.getItem(storageKey) || "0", 10);
-
-    if (reloadCount >= MAX_RELOADS_PER_DAY) {
-        return; // frequency cap hit — do nothing
-    }
-
-    setInterval(function () {
-        reloadCount++;
-        localStorage.setItem(storageKey, reloadCount.toString());
-
-        if (reloadCount >= MAX_RELOADS_PER_DAY) {
-            return;
-        }
-
-        location.reload(true);
-    }, RELOAD_INTERVAL_MS);
-})();
-</script>
-
 <style>
   body {
     background: #111;
