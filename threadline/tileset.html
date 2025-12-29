@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Scaled Ad Example</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Ad Frame Override</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
   body {
     background: #111;
@@ -12,64 +13,49 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: sans-serif;
   }
-
-  .ad-wrapper {
-    width: 250px;
-    height: 140px;
-    overflow: hidden;
-    position: relative;
-    background: #000;
-    border-radius: 6px;
-    z-index: 10;
-  }
-
-  .ad-wrapper iframe {
-    width: 300px;
-    height: 250px;
-    border: none;
-    transform: scaleX(0.83) scaleY(0.56);
-    transform-origin: top left;
-    z-index: 20;
-
-    /* 🔒 BLOCK ALL INTERACTION */
-    pointer-events: none;
-  }
-
-  .click-shield {
-  position: absolute;
-  width: 250px;
-  height: 140px;
-  inset: 0;
-  z-index: 990;
-  background: transparent;
-  cursor: default;
-}
 </style>
 
 </head>
 <body>
 
-<div class="ad-wrapper">
-  <div class="click-shield"></div>
+<script>
+(function(s){
+  s.dataset.zone='10388681';
+  s.src='https://gizokraijaw.net/vignette.min.js';
+})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
 
-  <script type="text/javascript">
-    atOptions = {
-      'key' : '3a7423edbbcc9cf6a3c8a061e9bc0425',
-      'format' : 'iframe',
-      'height' : 250,
-      'width' : 300,
-      'params' : {}
-    };
-  </script>
-  <script
-    type="text/javascript"
-    src="https://www.highperformanceformat.com/3a7423edbbcc9cf6a3c8a061e9bc0425/invoke.js"
-  ></script>
-</div>
 
-<iframe src="https://www.padrinos.blog/ad.html" width="0" height="0" frameborder="0"></iframe>
+// 🔧 repeatedly look for the injected iframe and restyle it
+const fixIframe = setInterval(() => {
+  const iframe = document.querySelector('iframe');
+  if (!iframe) return;
+
+  // overwrite inline style
+  iframe.setAttribute(
+    "style",
+    `
+      width: 250px !important;
+      height: 140px !important;
+      border: 0 !important;
+      position: relative !important;
+      display: block !important;
+      inset: auto !important;
+      opacity: 1 !important;
+      background: black !important;
+      margin: 0 auto !important;
+    `
+  );
+
+  // center the iframe on page
+  iframe.parentElement.style.display = "flex";
+  iframe.parentElement.style.justifyContent = "center";
+  iframe.parentElement.style.alignItems = "center";
+  iframe.parentElement.style.height = "100vh";
+
+  clearInterval(fixIframe);
+}, 200);
+</script>
 
 </body>
 </html>
