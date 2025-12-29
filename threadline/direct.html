@@ -18,34 +18,36 @@
   .ad-wrapper {
     width: 250px;
     height: 140px;
-    overflow: hidden;
-    position: relative;
     background: #000;
     border-radius: 6px;
-    z-index: 10;
+    position: relative;
+    overflow: hidden;
+
+    /* Center contents */
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
+  /* Style the generated iframe */
   .ad-wrapper iframe {
-    width: 300px;
-    height: 250px;
+    width: 250px !important;
+    height: 140px !important;
     border: none;
-    transform: scaleX(0.83) scaleY(0.56);
-    transform-origin: top left;
-    z-index: 20;
 
-    /* 🔒 BLOCK ALL INTERACTION */
+    /* block interaction */
     pointer-events: none;
   }
 
   .click-shield {
-  position: absolute;
-  width: 250px;
-  height: 140px;
-  inset: 0;
-  z-index: 990;
-  background: transparent;
-  cursor: default;
-}
+    position: absolute;
+    inset: 0;
+    width: 250px;
+    height: 140px;
+    z-index: 990;
+    background: transparent;
+    cursor: default;
+  }
 </style>
 
 </head>
@@ -54,7 +56,14 @@
 <div class="ad-wrapper">
   <div class="click-shield"></div>
 
-<script>(function(s){s.dataset.zone='10388681',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+  <script>
+    (function(s){
+      s.dataset.zone='10388681';
+      s.src='https://gizokraijaw.net/vignette.min.js';
+    })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
+  </script>
+
+</div>
 
 </body>
 </html>
