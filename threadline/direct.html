@@ -22,12 +22,6 @@
       margin: auto;
     }
 
-    /* Make sure the ad itself fits the container */
-    #ad-overlay iframe, #ad-overlay > div {
-      width: 250px !important;
-      height: 140px !important;
-    }
-
     html, body {
       margin: 0;
       padding: 0;
@@ -44,8 +38,26 @@
     // Run the interstitial ad inside the overlay
     aclib.runInterstitial({
         zoneId: '10759474',
-        container: document.getElementById('ad-overlay') // Inject into overlay
+        container: document.getElementById('ad-overlay')
     });
+
+    // Force any injected modal to 250x140px
+    const fixModal = setInterval(() => {
+      const modal = document.getElementById('modal');
+      if (!modal) return;
+
+      modal.style.width = "250px";
+      modal.style.height = "140px";
+      modal.style.position = "relative";
+      modal.style.margin = "auto";
+      modal.style.top = "0";
+      modal.style.left = "0";
+      modal.style.right = "0";
+      modal.style.bottom = "0";
+
+      // Stop the interval once applied
+      clearInterval(fixModal);
+    }, 50);
   </script>
 </body>
 </html>
