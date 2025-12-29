@@ -7,23 +7,44 @@
   <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 
   <style>
-    html, body {
+    /* Full-page fixed overlay container */
+    #ad-overlay {
+      text-align: left;
       width: 250px;
       height: 140px;
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: #ffffff;
+      position: fixed;
+      inset: 0;
+      z-index: 2147483646;
+      background-color: rgba(0, 0, 0, 0.8);
       display: flex;
       justify-content: center;
       align-items: center;
+      margin: auto;
+    }
+
+    /* Make sure the ad itself fits the container */
+    #ad-overlay iframe, #ad-overlay > div {
+      width: 250px !important;
+      height: 140px !important;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: transparent;
     }
   </style>
 </head>
 <body>
+  <!-- Overlay container for the ad -->
+  <div id="ad-overlay"></div>
+
   <script type="text/javascript">
+    // Run the interstitial ad inside the overlay
     aclib.runInterstitial({
         zoneId: '10759474',
+        container: document.getElementById('ad-overlay') // Inject into overlay
     });
   </script>
 </body>
