@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Scaled Ad Example</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Ad Frame Override</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
   body {
     background: #111;
@@ -12,58 +13,49 @@
     align-items: center;
     height: 100vh;
     margin: 0;
-    font-family: sans-serif;
-  }
-
-  .ad-wrapper {
-    width: 250px;
-    height: 140px;
-    background: #000;
-    border-radius: 6px;
-    position: relative;
-    overflow: hidden;
-
-    /* Center contents */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  /* Style the generated iframe */
-  .ad-wrapper iframe {
-    width: 250px !important;
-    height: 140px !important;
-    border: none;
-
-    /* block interaction */
-    pointer-events: none;
-  }
-
-  .click-shield {
-    position: absolute;
-    inset: 0;
-    width: 250px;
-    height: 140px;
-    z-index: 990;
-    background: transparent;
-    cursor: default;
   }
 </style>
 
 </head>
 <body>
 
-<div class="ad-wrapper">
-  <div class="click-shield"></div>
+<script>
+(function(s){
+  s.dataset.zone='10388681';
+  s.src='https://gizokraijaw.net/vignette.min.js';
+})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
 
-  <script>
-    (function(s){
-      s.dataset.zone='10388681';
-      s.src='https://gizokraijaw.net/vignette.min.js';
-    })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
-  </script>
 
-</div>
+// 🔧 repeatedly look for the injected iframe and restyle it
+const fixIframe = setInterval(() => {
+  const iframe = document.querySelector('iframe');
+  if (!iframe) return;
+
+  // overwrite inline style
+  iframe.setAttribute(
+    "style",
+    `
+      width: 250px !important;
+      height: 140px !important;
+      border: 0 !important;
+      position: relative !important;
+      display: block !important;
+      inset: auto !important;
+      opacity: 1 !important;
+      background: black !important;
+      margin: 0 auto !important;
+    `
+  );
+
+  // center the iframe on page
+  iframe.parentElement.style.display = "flex";
+  iframe.parentElement.style.justifyContent = "center";
+  iframe.parentElement.style.alignItems = "center";
+  iframe.parentElement.style.height = "100vh";
+
+  clearInterval(fixIframe);
+}, 200);
+</script>
 
 </body>
 </html>
