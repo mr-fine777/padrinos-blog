@@ -1,63 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<title>Ad Frame Override</title>
-<meta name="viewport" content="width=250, height=140, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta charset="UTF-8">
+  <title>Ad Frame Override</title>
+  <meta name="viewport" content="width=250, height=140, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 
-<style>
-  html, body {
-    width: 250px;
-    height: 140px;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    background: #ffffff;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-</style>
-
+  <style>
+    html, body {
+      width: 250px;
+      height: 140px;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background: #ffffff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  </style>
 </head>
 <body>
-
-<script>
-(function(s){
-  s.dataset.zone='10388681';
-  s.src='https://gizokraijaw.net/vignette.min.js';
-})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
-
-// 🔧 Override injected iframe styles
-const fixIframe = setInterval(() => {
-  const iframe = document.querySelector('iframe');
-  if (!iframe) return;
-
-  iframe.setAttribute(
-    "style",
-    `
-      width: 250px !important;
-      height: 140px !important;
-      border: 0 !important;
-      position: relative !important;
-      display: block !important;
-      inset: auto !important;
-      opacity: 1 !important;
-      background: black !important;
-      margin: 0 auto !important;
-    `
-  );
-
-  // center the iframe in the page
-  iframe.parentElement.style.display = "flex";
-  iframe.parentElement.style.justifyContent = "center";
-  iframe.parentElement.style.alignItems = "center";
-  iframe.parentElement.style.width = "250px";
-  iframe.parentElement.style.height = "140px";
-
-  clearInterval(fixIframe);
-}, 200);
-</script>
-
+  <script type="text/javascript">
+    aclib.runInterstitial({
+        zoneId: '10759474',
+    });
+  </script>
 </body>
 </html>
