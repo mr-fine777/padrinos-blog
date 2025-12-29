@@ -1,56 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Redirecting...</title>
-  <style>
-    body {
-      margin: 0;
-      background-color: #8858bb;
-      background: linear-gradient(135deg, #8858bb 0%, #5f3d84 100%);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      flex-direction: column;
-      font-family: sans-serif;
-    }
+  <meta charset="UTF-8">
+  <title>Scaled Ad Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+  }
 
-    img {
-      max-width: 200px;
-      height: auto;
-      margin-bottom: 20px;
-    }
+  .ad-wrapper {
+    width: 250px;
+    height: 140px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    border-radius: 6px;
+    z-index: 10;
+  }
 
-    .button-container {
-      display: flex;
-      gap: 20px;
-    }
+  .ad-wrapper iframe {
+    width: 300px;
+    height: 250px;
+    border: none;
+    transform: scaleX(0.83) scaleY(0.56);
+    transform-origin: top left;
+    z-index: 20;
 
-    .redirect-button {
-      padding: 10px 20px;
-      font-size: 16px;
-      border: solid 2px #f4da6e;
-      border-radius: 6px;
-      background-color: transparent;
-      color: #f4da6e;
-      cursor: pointer;
-      transition: transform 0.3s;
-      text-decoration: none;
-    }
+    /* 🔒 BLOCK ALL INTERACTION */
+    pointer-events: none;
+  }
 
-    .redirect-button:hover {
-      transform: scale(1.1);
-    }
-  </style>
+  .click-shield {
+  position: absolute;
+  width: 250px;
+  height: 140px;
+  inset: 0;
+  z-index: 990;
+  background: transparent;
+  cursor: default;
+}
+</style>
+
 </head>
 <body>
-  <iframe src="https://www.revenuecpmgate.com/vqyxn9rzs?key=6bdf0e7d8d1a5b7d3f016ddfd4663d7f" width="0" height="0" style="border:0;"></iframe>
-  <img src="icon.png" alt="Loading Icon" />
-  <div class="button-container">
-    <a class="redirect-button" href="https://chromewebstore.google.com/detail/threadline/jaepjofibedopopohhifnaohihambnco" target="_blank">Chrome</a>
-    <a class="redirect-button" href="https://addons.mozilla.org/en-US/firefox/addon/threadline/" target="_blank">Firefox</a>
-  </div>
+
+<div class="ad-wrapper">
+  <div class="click-shield"></div>
+
+<script>(function(s){s.dataset.zone='10388681',s.src='https://gizokraijaw.net/vignette.min.js'})([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))</script>
+
 </body>
 </html>
