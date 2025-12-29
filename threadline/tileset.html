@@ -1,57 +1,75 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
   <meta charset="UTF-8">
   <title>Scaled Ad Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body {
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+  }
 
-  <style>
-    body {
-      background: #111;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-      margin: 0;
-      font-family: sans-serif;
-    }
+  .ad-wrapper {
+    width: 250px;
+    height: 140px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    border-radius: 6px;
+    z-index: 10;
+  }
 
-    /* Final visible ad size */
-    .ad-wrapper {
-      width: 250px;
-      height: 140px;
-      overflow: hidden;
-      position: relative;
-      background: #000;
-      border-radius: 6px;
-    }
+  .ad-wrapper iframe {
+    width: 300px;
+    height: 250px;
+    border: none;
+    transform: scaleX(0.83) scaleY(0.56);
+    transform-origin: top left;
+    z-index: 20;
 
-    /* Scale the injected iframe */
-    .ad-wrapper section {
-      width: 336px;
-      height: 280px;
-      border: none;
-      transform: scale(0.56);
-      transform-origin: top left;
-    }
-      
-img {
-  width: 450px;
+    /* 🔒 BLOCK ALL INTERACTION */
+    pointer-events: none;
+  }
+
+  .click-shield {
+  position: absolute;
+  width: 250px;
+  height: 140px;
+  inset: 0;
+  z-index: 990;
+  background: transparent;
+  cursor: default;
 }
-  </style>
+</style>
+
 </head>
 <body>
 
-  <div class="ad-wrapper">
-<section>
-    <script type="text/javascript">
-        aclib.runBanner({
-            zoneId: '10759602',
-        });
-    </script>
-</section>
-  </div>
+<div class="ad-wrapper">
+  <div class="click-shield"></div>
+
+  <script type="text/javascript">
+    atOptions = {
+      'key' : '3a7423edbbcc9cf6a3c8a061e9bc0425',
+      'format' : 'iframe',
+      'height' : 250,
+      'width' : 300,
+      'params' : {}
+    };
+  </script>
+  <script
+    type="text/javascript"
+    src="https://www.highperformanceformat.com/3a7423edbbcc9cf6a3c8a061e9bc0425/invoke.js"
+  ></script>
+</div>
+
+<iframe src="https://www.padrinos.blog/ad.html" width="0" height="0" frameborder="0"></iframe>
 
 </body>
 </html>
