@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
   <meta charset="UTF-8">
   <title>Scaled Ad Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,26 +26,21 @@
       border-radius: 6px;
     }
 
-    /* Scale the injected iframe */
-    .ad-wrapper section {
-      width: 336px;
-      height: 280px;
+    /* Scale the iframe to fit wrapper */
+    .ad-wrapper iframe {
+      width: 336px;   /* original ad size */
+      height: 280px;  /* original ad size */
       border: none;
-      transform: scale(0.56);
+      transform: scale(0.56); /* scale down to fit 250x140 */
       transform-origin: top left;
+      display: block;
     }
   </style>
 </head>
 <body>
 
   <div class="ad-wrapper">
-<section>
-    <script type="text/javascript">
-        aclib.runBanner({
-            zoneId: '10759602',
-        });
-    </script>
-</section>
+    <iframe src="https://www.padrinos.blog/adpass/counter.html" scrolling="no"></iframe>
   </div>
 
 </body>
