@@ -3,16 +3,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Ad Frame Override</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=250, height=140, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
 <style>
-  body {
+  html, body {
+    width: 250px;
+    height: 140px;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
     background: #111;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
   }
 </style>
 
@@ -25,13 +28,11 @@
   s.src='https://gizokraijaw.net/vignette.min.js';
 })([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')));
 
-
-// 🔧 repeatedly look for the injected iframe and restyle it
+// 🔧 Override injected iframe styles
 const fixIframe = setInterval(() => {
   const iframe = document.querySelector('iframe');
   if (!iframe) return;
 
-  // overwrite inline style
   iframe.setAttribute(
     "style",
     `
@@ -47,11 +48,12 @@ const fixIframe = setInterval(() => {
     `
   );
 
-  // center the iframe on page
+  // center the iframe in the page
   iframe.parentElement.style.display = "flex";
   iframe.parentElement.style.justifyContent = "center";
   iframe.parentElement.style.alignItems = "center";
-  iframe.parentElement.style.height = "100vh";
+  iframe.parentElement.style.width = "250px";
+  iframe.parentElement.style.height = "140px";
 
   clearInterval(fixIframe);
 }, 200);
