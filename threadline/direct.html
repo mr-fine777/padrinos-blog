@@ -10,23 +10,44 @@
     /* Full-page fixed overlay container */
     #ad-overlay {
       text-align: left;
-      width: 250px;
-      height: 140px;
-      position: fixed;
-      inset: 0;
-      z-index: 2147483646;
-      background-color: rgba(0, 0, 0, 0.8);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: auto;
+      width: 250px !important;
+      height: 140px !important;
+      min-width: 250px !important;
+      min-height: 140px !important;
+      max-width: 250px !important;
+      max-height: 140px !important;
+      position: fixed !important;
+      inset: 0 !important;
+      z-index: 2147483646 !important;
+      background-color: rgba(0, 0, 0, 0.8) !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      margin: auto !important;
     }
 
     html, body {
-      margin: 0;
-      padding: 0;
-      overflow: hidden;
-      background: transparent;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      background: transparent !important;
+      width: 250px !important;
+      height: 140px !important;
+      min-width: 250px !important;
+      min-height: 140px !important;
+      max-width: 250px !important;
+      max-height: 140px !important;
+    }
+    
+    body > * {
+      box-sizing: border-box !important;
+      width: 250px !important;
+      height: 140px !important;
+      min-width: 250px !important;
+      min-height: 140px !important;
+      max-width: 250px !important;
+      max-height: 140px !important;
+      overflow: hidden !important;
     }
   </style>
 </head>
@@ -41,23 +62,56 @@
         container: document.getElementById('ad-overlay')
     });
 
-    // Force any injected modal to 250x140px
-    const fixModal = setInterval(() => {
-      const modal = document.getElementById('modal');
-      if (!modal) return;
+    // Enforce 250x140px on all elements, always
+    function enforceAdSize() {
+      document.documentElement.style.width = '250px';
+      document.documentElement.style.height = '140px';
+      document.documentElement.style.minWidth = '250px';
+      document.documentElement.style.minHeight = '140px';
+      document.documentElement.style.maxWidth = '250px';
+      document.documentElement.style.maxHeight = '140px';
+      document.body.style.width = '250px';
+      document.body.style.height = '140px';
+      document.body.style.minWidth = '250px';
+      document.body.style.minHeight = '140px';
+      document.body.style.maxWidth = '250px';
+      document.body.style.maxHeight = '140px';
+      document.body.style.overflow = 'hidden';
+      const overlay = document.getElementById('ad-overlay');
+      if (overlay) {
+        overlay.style.width = '250px';
+        overlay.style.height = '140px';
+        overlay.style.minWidth = '250px';
+        overlay.style.minHeight = '140px';
+        overlay.style.maxWidth = '250px';
+        overlay.style.maxHeight = '140px';
+        overlay.style.overflow = 'hidden';
+      }
+      // Also force all direct children of body
+      Array.from(document.body.children).forEach(child => {
+        if (child.id !== 'ad-overlay') {
+          child.style.width = '250px';
+          child.style.height = '140px';
+          child.style.minWidth = '250px';
+          child.style.minHeight = '140px';
+          child.style.maxWidth = '250px';
+          child.style.maxHeight = '140px';
+          child.style.overflow = 'hidden';
+        }
+      });
+    }
 
-      modal.style.width = "250px";
-      modal.style.height = "140px";
-      modal.style.position = "relative";
-      modal.style.margin = "auto";
-      modal.style.top = "0";
-      modal.style.left = "0";
-      modal.style.right = "0";
-      modal.style.bottom = "0";
+    // Initial enforcement
+    enforceAdSize();
 
-      // Stop the interval once applied
-      clearInterval(fixModal);
-    }, 50);
+    // Observe DOM changes and re-apply enforcement
+    const observer = new MutationObserver(() => {
+      enforceAdSize();
+    });
+    observer.observe(document.documentElement, { attributes: true, childList: true, subtree: true });
+
+    // Also periodically enforce as a fallback
+    setInterval(enforceAdSize, 100);
   </script>
 </body>
 </html>
