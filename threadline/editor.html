@@ -28,102 +28,40 @@
     <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 
     <style>
-        html, body {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            align-items: center;
-            background-color: #000;
-            user-select: none;
-        }
+  body {
+    background: #000;
+    margin: 0;
+    font-family: sans-serif;
+  }
 
-        .adblock {
-            position: relative;
-            width: 300px;
-            height: 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+  .ad-wrapper {
+    width: 300px;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    z-index: 10;
+  }
 
-        .adblock-hold {
-            position: relative;
-            width: calc(100% - 14px);
-            height: calc(100% - 14px);
-            margin: 7px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            padding: 10px;
-            text-align: center;
-            z-index: 10;
-        }
-
-        .adblock-hold p {
-            margin: 0;
-            font-size: 14px;
-            font-family: sans-serif;
-            color: #99894a;
-            font-weight: bold;
-        }
-
-        .aditself {
-            position: absolute;
-            width: 300px;
-            z-index: 50;
-            background-color: transparent;
-            pointer-events: none;
-            color: transparent;
-        }
-
-        .aditself iframe {
-            pointer-events: auto;
-        }
-
-        a { color: #8a5cbd; }
-
-        img {
-            max-height: 48px;
-            z-index: 999;
-            margin-left: 240px;
-            margin-top: 200px;
-            opacity: 0.8;
-            position: absolute;
-        }
-
-        .blox {
-            background-color: #bba757;
-            height: 250px;
-            width: 300px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
+  .ad-wrapper iframe {
+    width: 300px;
+    height: 250px;
+    border: none;
+    transform-origin: top left;
+    z-index: 20;
     </style>
 </head>
-
 <body>
-	<div id="blocker"></div>
-    <div class="blox">
-        <div class="adblock">
-            <img src="icon.png">
-            <div class="aditself">
-<script>
-  atOptions = {
-    'key' : 'bc32ca4c346db493fd0c27d63dd512aa',
-    'format' : 'iframe',
-    'height' : 250,
-    'width' : 300,
-    'params' : {}
-  };
-</script>
-<script src="https://www.highperformanceformat.com/bc32ca4c346db493fd0c27d63dd512aa/invoke.js"></script>
-			</div>
-        </div>
-    </div>
+
+<div class="ad-wrapper">
+<iframe 
+    src="https://www.padrinos.blog/adpass/temp.html" 
+    width="300" 
+    height="250" 
+    frameborder="0">
+</iframe>
+
+</div>
+
 </body>
 </html>
