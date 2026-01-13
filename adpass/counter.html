@@ -1,2 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scaled Ad Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <script type="text/javascript">
+        window.onload = function() {
+            setInterval(function() {
+                location.reload(true);
+            }, 10000);
+        };
+    </script>
+<style>
+  body {
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+  }
+
+  .ad-wrapper {
+    width: 250px;
+    height: 140px;
+    overflow: hidden;
+    position: relative;
+    background: #000;
+    border-radius: 6px;
+    z-index: 10;
+  }
+
+  .ad-wrapper iframe {
+    width: 300px;
+    height: 250px;
+    border: none;
+    transform: scaleX(0.83) scaleY(0.56);
+    transform-origin: top left;
+    z-index: 20;
+</style>
+
+</head>
+<body>
+
+<div class="ad-wrapper">
 <script async="async" data-cfasync="false" src="https://pl25093297.effectivegatecpm.com/27ead3145741323a615cc5f20b3c8dc2/invoke.js"></script>
 <div id="container-27ead3145741323a615cc5f20b3c8dc2"></div>
+</div>
+
+</body>
+</html>
