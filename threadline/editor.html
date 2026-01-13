@@ -28,39 +28,57 @@
     <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
 
     <style>
-  body {
-    background: #000;
-    margin: 0;
-    font-family: sans-serif;
-  }
+        body {
+            background: #000;
+            margin: 0;
+            font-family: sans-serif;
+        }
 
-  .ad-wrapper {
-    width: 300px;
-    height: 250px;
-    overflow: hidden;
-    position: relative;
-    background: #000;
-    z-index: 10;
-  }
+        .ad-wrapper {
+            width: 300px;
+            height: 250px;
+            overflow: hidden;
+            position: relative;
+            background: #000;
+            z-index: 10;
+        }
 
-  .ad-wrapper iframe {
-    width: 300px;
-    height: 250px;
-    border: none;
-    transform-origin: top left;
-    z-index: 20;
+        .ad-wrapper iframe {
+            width: 300px;
+            height: 250px;
+            border: none;
+            transform-origin: top left;
+            z-index: 20;
+        }
     </style>
+
+    <!-- Random Ad Selector -->
+    <script>
+        const ads = [
+            "https://www.padrinos.blog/ads/format1.html",
+            "https://www.padrinos.blog/ads/format2.html",
+            "https://www.padrinos.blog/ads/format3.html"
+        ];
+
+        function loadRandomAd() {
+            const iframe = document.getElementById("adFrame");
+            const randomAd = ads[Math.floor(Math.random() * ads.length)];
+            iframe.src = randomAd;
+        }
+
+        window.addEventListener("DOMContentLoaded", loadRandomAd);
+    </script>
 </head>
+
 <body>
 
 <div class="ad-wrapper">
-<iframe 
-    src="https://www.padrinos.blog/adpass/temp.html" 
-    width="300" 
-    height="250" 
-    frameborder="0">
-</iframe>
-
+    <iframe
+        id="adFrame"
+        width="300"
+        height="250"
+        frameborder="0">
+    </iframe>
 </div>
 
 </body>
