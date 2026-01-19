@@ -14,33 +14,23 @@
   
 </style>
 <script>
-function wrapIframe(iframe) {
-  if (!iframe) return;
+function markIframe(iframe) {
+  if (!iframe || iframe.id === "windowed") return;
 
-  // Skip the protected iframe
-  if (iframe.id === "windowed") return;
-
-  // Don't double-wrap
-  if (iframe.closest(".beholder")) return;
-
-  const wrapper = document.createElement("div");
-  wrapper.className = "beholder";
-
-  iframe.parentNode.insertBefore(wrapper, iframe);
-  wrapper.appendChild(iframe);
+  iframe.classList.add("beholder");
 }
 
-// Wrap any that already exist anywhere in document
-document.querySelectorAll("iframe").forEach(wrapIframe);
+// Existing iframes
+document.querySelectorAll("iframe").forEach(markIframe);
 
-// Watch the ENTIRE document, not just body
+// Future iframes
 const observer = new MutationObserver(mutations => {
   mutations.forEach(mutation => {
     mutation.addedNodes.forEach(node => {
-      if (node.tagName === "IFRAME") wrapIframe(node);
+      if (node.tagName === "IFRAME") markIframe(node);
 
       if (node.querySelectorAll) {
-        node.querySelectorAll("iframe").forEach(wrapIframe);
+        node.querySelectorAll("iframe").forEach(markIframe);
       }
     });
   });
