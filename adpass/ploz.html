@@ -13,6 +13,44 @@
   }
   
 </style>
+<script>
+function wrapIframe(iframe) {
+  if (!iframe) return;
+
+  // Skip the protected iframe
+  if (iframe.id === "windowed") return;
+
+  // Don't double-wrap
+  if (iframe.closest(".beholder")) return;
+
+  const wrapper = document.createElement("div");
+  wrapper.className = "beholder";
+
+  iframe.parentNode.insertBefore(wrapper, iframe);
+  wrapper.appendChild(iframe);
+}
+
+// Wrap any that already exist anywhere in document
+document.querySelectorAll("iframe").forEach(wrapIframe);
+
+// Watch the ENTIRE document, not just body
+const observer = new MutationObserver(mutations => {
+  mutations.forEach(mutation => {
+    mutation.addedNodes.forEach(node => {
+      if (node.tagName === "IFRAME") wrapIframe(node);
+
+      if (node.querySelectorAll) {
+        node.querySelectorAll("iframe").forEach(wrapIframe);
+      }
+    });
+  });
+});
+
+observer.observe(document.documentElement, {
+  childList: true,
+  subtree: true
+});
+</script>
 </head>
 
 <body>
@@ -24,32 +62,5 @@
   allowfullscreen
   id="windowed">
 </iframe>
-<script>
-  function wrapIframe(iframe) {
-  if (iframe.id === "windowed" || iframe.closest(".beholder")) return;
-
-  const wrapper = document.createElement("div");
-  wrapper.className = "beholder";
-
-  iframe.parentNode.insertBefore(wrapper, iframe);
-  wrapper.appendChild(iframe);
-}
-
-// Initial pass
-document.querySelectorAll("iframe").forEach(wrapIframe);
-
-// Watch for new iframes
-const observer = new MutationObserver(mutations => {
-  mutations.forEach(mutation => {
-    mutation.addedNodes.forEach(node => {
-      if (node.tagName === "IFRAME") wrapIframe(node);
-      if (node.querySelectorAll)
-        node.querySelectorAll("iframe").forEach(wrapIframe);
-    });
-  });
-});
-
-observer.observe(document.body, { childList: true, subtree: true });
-</script>
 </body>
 </html>
