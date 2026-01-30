@@ -5,41 +5,38 @@
   <title>Scaled Ad Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-  body {
-    background: #000;
-    margin: 0;
-    font-family: sans-serif;
-  }
-
-  .ad-wrapper {
-    width: 300px;
-    height: 250px;
-    overflow: hidden;
-    position: relative;
-    background: #000;
-    z-index: 10;
-  }
-
-  .ad-wrapper iframe {
-    width: 300px;
-    height: 250px;
-    border: none;
-    transform-origin: top left;
-    z-index: 20;
+ body {
+   margin: 0;
+ }
 </style>
 
 </head>
 <body>
 
 <div class="ad-wrapper">
-<iframe 
-    src="https://www.padrinos.blog/adpass/temp.html" 
-    width="300" 
-    height="250" 
-    frameborder="0">
-</iframe>
-
+<div id="ntv_2103547"></div>
+<script type="text/javascript">
+(function(d) {
+	var params =
+	{
+		bvwidgetid: "ntv_2103547",
+		bvlinksownid: 2103547,
+		rows: 1,
+		cols: 1,
+		textpos: "below",
+		imagewidth: 300,
+		mobilecols: 1,
+		cb: (new Date()).getTime()
+	};
+	params.bvwidgetid = "ntv_2103547" + params.cb;
+	d.getElementById("ntv_2103547").id = params.bvwidgetid;
+	var qs = Object.keys(params).reduce(function(a, k){ a.push(k + '=' + encodeURIComponent(params[k])); return a},[]).join(String.fromCharCode(38));
+	var s = d.createElement('script'); s.type='text/javascript';s.async=true;
+	var p = 'https:' == document.location.protocol ? 'https' : 'http';
+	s.src = p + "://cdn.hyperpromote.com/bidvertiser/tags/active/bdvws.js?" + qs;
+	d.getElementById(params.bvwidgetid).appendChild(s);
+})(document);
+</script>
 </div>
-
 </body>
 </html>
