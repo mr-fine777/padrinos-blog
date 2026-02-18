@@ -18,19 +18,21 @@ body {
   overflow-x: hidden;
 }
 
-  .popfer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    font-size: 24px;
-    color: red;
-  }
+.popfer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  color: red;
+}
 </style>
 </head>
 
 <body>
 <p class="popfer">test</p>
+
 <script>
+// Force any injected video to be muted
 document.addEventListener("DOMContentLoaded", function() {
     const observer = new MutationObserver(function() {
         const videos = document.querySelectorAll("video");
@@ -53,16 +55,21 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 <script>
-(function(ffw){
-var d = document,
-    s = d.createElement('script'),
-    l = d.scripts[d.scripts.length - 1];
-s.settings = ffw || {};
-s.src = "//softtemperature.com/bjXHVOsad.GplO0KYVWDcp/gezmI9-u/Z/U/lXkwPKTBYJ3cNYTCk/5eMvTpQEtLNYjIcF1HORTzkjxXNqQw";
-s.async = true;
-s.referrerPolicy = 'no-referrer-when-downgrade';
-l.parentNode.insertBefore(s, l);
-})({})
+// Wait for any user click before loading Hilltop ad
+document.addEventListener("click", function loadHilltopAdOnce() {
+    document.removeEventListener("click", loadHilltopAdOnce);
+
+    (function(ffw){
+        var d = document,
+            s = d.createElement('script'),
+            l = d.scripts[d.scripts.length - 1];
+        s.settings = ffw || {};
+        s.src = "//softtemperature.com/bjXHVOsad.GplO0KYVWDcp/gezmI9-u/Z/U/lXkwPKTBYJ3cNYTCk/5eMvTpQEtLNYjIcF1HORTzkjxXNqQw";
+        s.async = true;
+        s.referrerPolicy = 'no-referrer-when-downgrade';
+        l.parentNode.insertBefore(s, l);
+    })({});
+});
 </script>
 
 </body>
