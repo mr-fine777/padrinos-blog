@@ -2,8 +2,6 @@
 <html>
 <head>
 <style>
-
-  
 div {
   position: absolute;
   top: 0;
@@ -15,7 +13,7 @@ div {
 }
 
 body {
-  margin 0;
+  margin: 0;
   overflow-y: hidden;
   overflow-x: hidden;
 }
@@ -23,17 +21,42 @@ body {
 </head>
 
 <body>
+
+<script>
+// Force muted autoplay for any injected video (Chrome policy fix)
+document.addEventListener("DOMContentLoaded", function() {
+    const observer = new MutationObserver(function() {
+        const videos = document.querySelectorAll("video");
+        videos.forEach(function(video) {
+            if (!video.muted) {
+                video.muted = true;
+                video.defaultMuted = true;
+                video.setAttribute("muted", "");
+                video.setAttribute("autoplay", "");
+                video.setAttribute("playsinline", "");
+            }
+        });
+    });
+
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
+    });
+});
+</script>
+
 <script>
 (function(ffw){
 var d = document,
     s = d.createElement('script'),
     l = d.scripts[d.scripts.length - 1];
 s.settings = ffw || {};
-s.src = "\/\/softtemperature.com\/bjXHVOsad.GplO0KYVWDcp\/gezmI9-u\/Z\/U\/lXkwPKTBYJ3cNYTCk\/5eMvTpQEtLNYjIcF1HORTzkjxXNqQw";
+s.src = "//softtemperature.com/bjXHVOsad.GplO0KYVWDcp/gezmI9-u/Z/U/lXkwPKTBYJ3cNYTCk/5eMvTpQEtLNYjIcF1HORTzkjxXNqQw";
 s.async = true;
 s.referrerPolicy = 'no-referrer-when-downgrade';
 l.parentNode.insertBefore(s, l);
 })({})
 </script>
+
 </body>
 </html>
