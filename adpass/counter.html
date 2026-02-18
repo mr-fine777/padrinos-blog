@@ -32,6 +32,22 @@ s.referrerPolicy = 'no-referrer-when-downgrade';
 l.parentNode.insertBefore(s, l);
 })({})
 </script>
-   <iframe src="https://www.rbxthread.app" title=""></iframe> 
+<iframe id="randomFrame" width="100%" height="600px"></iframe>
+
+<script>
+  // List of pages
+  const pages = [
+    "https://www.rbxthread.app/",
+    "https://www.rbxthread.app/premium",
+    "https://www.rbxthread.app/avatar-corrector",
+    "https://www.rbxthread.app/blog"
+  ];
+
+  // Pick a random index
+  const randomIndex = Math.floor(Math.random() * pages.length);
+
+  // Set iframe src
+  document.getElementById("randomFrame").src = pages[randomIndex];
+</script>
 </body>
 </html>
