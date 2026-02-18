@@ -2,16 +2,6 @@
 <html>
 <head>
 <style>
-div {
-  position: absolute;
-  top: 0;
-  right: 0 !important;
-  left: 0 !important;
-  margin-left: 300px;
-  height: 250px !important;
-  width: 300px !important;
-}
-
 body {
   margin: 0;
   overflow-y: hidden;
@@ -30,47 +20,10 @@ body {
 
 <body>
 <p class="popfer">test</p>
-
-<script>
-// Force any injected video to be muted
-document.addEventListener("DOMContentLoaded", function() {
-    const observer = new MutationObserver(function() {
-        const videos = document.querySelectorAll("video");
-        videos.forEach(function(video) {
-            if (!video.muted) {
-                video.muted = true;
-                video.defaultMuted = true;
-                video.setAttribute("muted", "");
-                video.setAttribute("autoplay", "");
-                video.setAttribute("playsinline", "");
-            }
-        });
-    });
-
-    observer.observe(document.body, {
-        childList: true,
-        subtree: true
-    });
-});
-</script>
-
-<script>
-// Wait for any user click before loading Hilltop ad
-document.addEventListener("click", function loadHilltopAdOnce() {
-    document.removeEventListener("click", loadHilltopAdOnce);
-
-    (function(ffw){
-        var d = document,
-            s = d.createElement('script'),
-            l = d.scripts[d.scripts.length - 1];
-        s.settings = ffw || {};
-        s.src = "//softtemperature.com/bjXHVOsad.GplO0KYVWDcp/gezmI9-u/Z/U/lXkwPKTBYJ3cNYTCk/5eMvTpQEtLNYjIcF1HORTzkjxXNqQw";
-        s.async = true;
-        s.referrerPolicy = 'no-referrer-when-downgrade';
-        l.parentNode.insertBefore(s, l);
-    })({});
-});
-</script>
+<video width="300" height="250" controls>
+  <source src="https://candid-twist.com/d/m.FBzTdOG/NKvoZlGFUC/ze-mx9Pu-ZcULlek/PSTvYu4HMuDvku5BO/TWMytRNIjwgPwlOeTfkW5ZNxwa" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
 
 </body>
 </html>
