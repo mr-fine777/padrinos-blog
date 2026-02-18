@@ -20,10 +20,19 @@ body {
 
 <body>
 <p class="popfer">test</p>
-<video width="300" height="250" controls>
-  <source src="https://candid-twist.com/d/m.FBzTdOG/NKvoZlGFUC/ze-mx9Pu-ZcULlek/PSTvYu4HMuDvku5BO/TWMytRNIjwgPwlOeTfkW5ZNxwa" type="video/mp4">
-  Your browser does not support the video tag.
-</video>
+<video id="adVideo" class="video-js vjs-default-skin" width="300" height="250" controls></video>
+
+<script src="https://vjs.zencdn.net/7.24.0/video.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/videojs-contrib-ads@6.8.0/dist/videojs.ads.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/videojs-ima@1.9.0/dist/videojs.ima.min.js"></script>
+<script>
+  var player = videojs('adVideo');
+  player.ima({
+    adTagUrl: 'https://candid-twist.com/d/m.FBzTdOG/NKvoZlGFUC/ze-mx9Pu-ZcULlek/PSTvYu4HMuDvku5BO/TWMytRNIjwgPwlOeTfkW5ZNxwa'
+  });
+  player.play();
+</script>
+
 
 </body>
 </html>
