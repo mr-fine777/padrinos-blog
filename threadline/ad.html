@@ -19,15 +19,7 @@
             }, 20000);
         };
     </script>
-    <!-- GLOBAL SAFETY SHIELD -->
-    <script>
-        window.alert = () => console.warn("Blocked alert");
-        window.confirm = () => { console.warn("Blocked confirm"); return false; };
-        window.prompt = () => { console.warn("Blocked prompt"); return null; };
-        window.open = () => { console.warn("Blocked window.open attempt"); return null; };
-        if (window.showModalDialog) window.showModalDialog = () => console.warn("Blocked showModalDialog");
-        document.write = () => console.warn("Blocked document.write");
-    </script>
+
 
     <!-- ACS script -->
     <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
