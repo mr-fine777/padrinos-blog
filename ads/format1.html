@@ -17,11 +17,19 @@ body {
   overflow-y: hidden;
   overflow-x: hidden;
 }
+
+  .popfer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    font-size: 24px;
+    color: red;
+  }
 </style>
 </head>
 
 <body>
-
+<p class="popfer">test</p>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
     const observer = new MutationObserver(function() {
