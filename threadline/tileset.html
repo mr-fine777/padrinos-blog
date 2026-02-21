@@ -71,20 +71,7 @@ observer.observe(document.documentElement, {
     transform: scaleX(0.83) scaleY(0.56);
     transform-origin: top left;
     z-index: 20;
-
-    /* 🔒 BLOCK ALL INTERACTION */
-    pointer-events: none;
   }
-
-  .click-shield {
-  position: absolute;
-  width: 250px;
-  height: 140px;
-  inset: 0;
-  z-index: 990;
-  background: transparent;
-  cursor: default;
-}
    
   .beholder {
     visibility: hidden !important;
