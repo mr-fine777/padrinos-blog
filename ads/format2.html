@@ -2,20 +2,38 @@
 <html>
 <head>
 <style>
-
 body {
   margin: 0;
   background: black;
   overflow-y: hidden;
   overflow-x: hidden;
 }
-
 </style>
 </head>
 <body>
-  <a href="https://amzn.to/4aNywbL" target="_blank">
-  <img src="https://cdn.discordapp.com/attachments/1434861208342892675/1476715405371248821/roblox.png?ex=69a221e4&is=69a0d064&hm=1e0b9f261cf60dcfbec2953354aa1d398884564ac479fda4d6dc3f8761d17ed7" 
-       style="width: 300px; height: 250px;">
+
+<a id="randomAd" href="#" target="_blank">
+  <img id="adImage" src="" style="width: 300px; height: 250px;">
 </a>
+
+<script>
+  const ads = [
+    {
+      link: "https://amzn.to/4aNywbL",
+      image: "https://cdn.discordapp.com/attachments/1434861208342892675/1476715405371248821/roblox.png?ex=69a221e4&is=69a0d064&hm=1e0b9f261cf60dcfbec2953354aa1d398884564ac479fda4d6dc3f8761d17ed7"
+    },
+    {
+      link: "https://amzn.to/4r3KGSC",
+      image: "https://cdn.discordapp.com/attachments/1434861208342892675/1476790823290011760/mines.png?ex=69a26821&is=69a116a1&hm=f8487e29fcec148bf3d9e49929b11cca00eede7aff3fe129875c25595a0b244f"
+    }
+  ];
+
+  // 50/50 random selection
+  const randomAd = ads[Math.floor(Math.random() * ads.length)];
+
+  document.getElementById("randomAd").href = randomAd.link;
+  document.getElementById("adImage").src = randomAd.image;
+</script>
+
 </body>
 </html>
