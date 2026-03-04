@@ -1,38 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script>
-  (function(s){s.dataset.zone='10224258',s.src='https://nap5k.com/tag.min.js'})
-    ([document.documentElement, document.body].filter(Boolean).pop().appendChild(document.createElement('script')))
-</script>
-<script>
-function markIframe(iframe) {
-  if (!iframe || iframe.id === "windowed") return;
-
-  iframe.classList.add("beholder");
-}
-
-// Existing iframes
-document.querySelectorAll("iframe").forEach(markIframe);
-
-// Future iframes
-const observer = new MutationObserver(mutations => {
-  mutations.forEach(mutation => {
-    mutation.addedNodes.forEach(node => {
-      if (node.tagName === "IFRAME") markIframe(node);
-
-      if (node.querySelectorAll) {
-        node.querySelectorAll("iframe").forEach(markIframe);
-      }
-    });
-  });
-});
-
-observer.observe(document.documentElement, {
-  childList: true,
-  subtree: true
-});
-</script>
+<script async src="https://ss.mrmnd.com/native.js"></script>
   <meta charset="UTF-8">
   <title>Scaled Ad Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -54,34 +23,13 @@ observer.observe(document.documentElement, {
     font-family: sans-serif;
   }
 
-  .ad-wrapper {
-    width: 250px;
-    height: 140px;
-    overflow: hidden;
-    position: relative;
-    background: #000;
-    border-radius: 6px;
-    z-index: 10;
-  }
 
-  .ad-wrapper iframe {
-    width: 300px;
-    height: 250px;
-    border: none;
-    transform: scaleX(0.83) scaleY(0.56);
-    transform-origin: top left;
-    z-index: 20;
-  }
-   
-  .beholder {
-    visibility: hidden !important;
-  }
 </style>
 
 </head>
 <body>
 <div class="ad-wrapper">
-<iframe src="//a.magsrv.com/iframe.php?idzone=5716694&size=300x250" width="300" height="250" scrolling="no" marginwidth="0" marginheight="0" frameborder="0"></iframe>
+<div data-mndazid="a9f63c01-3bc2-44e8-8975-958216b7a599"></div>
 </div>
 
 </body>
