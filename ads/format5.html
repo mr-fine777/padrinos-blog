@@ -1,33 +1,59 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-
+<script async src="https://ss.mrmnd.com/native.js"></script>
+  <meta charset="UTF-8">
+  <title>Scaled Ad Example</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script type="text/javascript">
-    aclib.runInterstitial({
-        zoneId: '10988230',
-    });
+        window.onload = function() {
+            setInterval(function() {
+                location.reload(true);
+            }, 10000);
+        };
+    </script>
+  <script>
+(function () {
+  const noop = function () {};
+  console.log = noop;
+  console.warn = noop;
+  console.error = noop;
+  console.info = noop;
+  console.debug = noop;
+})();
 </script>
 <style>
+  body {
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: sans-serif;
+  }
 
-body {
-  background: #9f9f9f;
-  margin: 0;
-  overflow-y: hidden;
-  overflow-x: hidden;
+
+img {
+  position: fixed !important;
+  height: 200px !important;
+  width: 300px !important;
+  top: 0;
+  left: 0;
 }
 
-    .hii {
-        color: yellow;
-        font-size: 25px;
-    }
-    
-</style>
-</head>
-<body>
-
-    <p class="hii">tesst</p>
+span {
+  opacity: 0;
+}
 
   
+</style>
+
+</head>
+<body>
+<div class="ad-wrapper">
+<div data-mndazid="a9f63c01-3bc2-44e8-8975-958216b7a599"></div>
+</div>
+
 </body>
 </html>
