@@ -3,6 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <title>Random Iframe</title>
+<script>
+(function () {
+  const noop = function () {};
+  console.log = noop;
+  console.warn = noop;
+  console.error = noop;
+  console.info = noop;
+  console.debug = noop;
+})();
+</script>
 <style>
 html, body {
   margin: 0;
