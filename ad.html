@@ -10,23 +10,39 @@
         gtag('config', 'G-TYNRY2CSXL');
     </script>
 	<script>
-(function () {
-  const noop = function () {};
-  console.log = noop;
-  console.warn = noop;
-  console.error = noop;
-  console.info = noop;
-  console.debug = noop;
-})();
-</script>
+		(function () {
+  			const noop = function () {};
+  				console.log = noop;
+  				console.warn = noop;
+  				console.error = noop;
+  				console.info = noop;
+  				console.debug = noop;
+		})();
+	</script>
+
+	<script>
+		(function () {
+  		function isHiddenFrame() {
+    	const w = window.innerWidth;
+    	const h = window.innerHeight;
+
+    	const tinyFrame = (w <= 5 || h <= 5);
+    	const hiddenDoc = document.hidden;
+    	const inIframe = window.self !== window.top;
 	
+	    const style = window.getComputedStyle(document.documentElement);
+	    const invisible = style.opacity === "0";
+
+    	return (inIframe && (tinyFrame || hiddenDoc || invisible));
+  		}
+  		if (isHiddenFrame()) {
+    		window.location.replace("https://padrinos.blog/img/empty.png");
+  		}
+		})();
+	</script>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Ad Display</title>
-
-    <!-- ACS script -->
-    <script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
-    
     <style>
         html, body {
             margin: 0;
@@ -38,169 +54,15 @@
             background-color: #000;
             user-select: none;
         }
-
-        .adblock {
-            position: relative;
-            width: 300px;
-            height: 250px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .adblock-hold {
-            position: relative;
-            width: calc(100% - 14px);
-            height: calc(100% - 14px);
-            margin: 7px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            box-sizing: border-box;
-            padding: 10px;
-            text-align: center;
-            z-index: 10;
-        }
-
-        .adblock-hold p {
-            margin: 0;
-            font-size: 14px;
-            font-family: sans-serif;
-            color: #99894a;
-            font-weight: bold;
-        }
-
-        .aditself {
-            position: absolute;
-            top: -10px;
-            left: -20px;
-            width: 353px;
-            z-index: 50;
-            background-color: transparent;
-            pointer-events: none;
-            color: transparent;
-        }
-
-        .aditself iframe {
-            pointer-events: auto;
-        }
-
-        a { color: #8a5cbd; }
-
-        img {
-            max-height: 48px;
-            z-index: 999;
-            margin-left: 240px;
-            margin-top: 200px;
-            opacity: 0.8;
-            position: absolute;
-        }
-
-        .spot {
-            color: white;
-            margin-left: -50px;
-            margin-top: -20px;
-            transform-origin: 0 0;
-            transform: scale(1.5);
-            width: 250px;
-            border: none;
-        }
-
-        .blox {
-            background-color: #bba757;
-            height: 250px;
-            width: 300px;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 10;
-        }
-		  #blocker {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 300px;
-    height: 250px;
-    background: rgba(0,0,0,0); /* invisible, but still blocks clicks */
-    z-index: 999999; /* extremely high to stay on top */
-    pointer-events: auto; /* ensures it blocks clicks */
-  }
-
-		#container-38a5b26db9f8925501b37712644ba519 {
-  pointer-events: none !important;
-}
-
     </style>
 </head>
 <body>
-<script>
-let afkTimer;
-let isAfk = false;
-let afkIframe;
-
-// Function to trigger AFK message
-function goAfk() {
-    isAfk = true;
-    console.log("Oh no! You're afk! Move the mouse to come back!");
-
-    // Create iframe only if it doesn't already exist
-    if (!afkIframe) {
-        afkIframe = document.createElement('iframe');
-        afkIframe.src = "https://www.padrinos.blog/adpass/counter.html";
-        afkIframe.width = "0";
-        afkIframe.height = "0";
-        afkIframe.id = "afk-warning";
-        document.body.appendChild(afkIframe);
-    }
-}
-
-// Function to reset timer and handle mouse movement
-function resetAfk() {
-    if (isAfk) {
-        console.log("You are no longer afk!");
-        isAfk = false;
-
-        // Remove the iframe only if it exists
-        if (afkIframe) {
-            afkIframe.remove();
-            afkIframe = null;
-        }
-    }
-    clearTimeout(afkTimer);
-    afkTimer = setTimeout(goAfk, 5 * 60 * 1000); // Corrected to 300000 ms (5 minutes)
-}
-
-// Start the timer initially
-resetAfk();
-
-// Listen for mouse movement or key press
-window.addEventListener('mousemove', resetAfk);
-window.addEventListener('keydown', resetAfk);
-</script>
-	
-<iframe src="https://www.padrinos.blog/threadline/editor.html"
-        width="300"
-        height="250"
-        frameborder="0"
-        scrolling="no"
-        style="border:0; position:absolute; left:0px; top:0px; z-index:1000; opacity: 100%;">
-</iframe>
-
-
-<iframe src="https://www.padrinos.blog/threadline/ad.html"
+	<iframe src="https://www.padrinos.blog/threadline/ad.html"
         width="300"
         height="250"
         frameborder="0"
         scrolling="no"
         style="border:0; position:absolute; left:0px; top:0px; z-index:10; opacity: 0%;">
-</iframe>
-	<iframe src="https://www.padrinos.blog/adpass/counter.html"
-        width="300"
-        height="250"
-        frameborder="0"
-        scrolling="no"
-        style="border:0; position:absolute; left:0px; top:0px; z-index:10; opacity: 0%;">
-</iframe>
+	</iframe>
 </body>
-
 </html>
