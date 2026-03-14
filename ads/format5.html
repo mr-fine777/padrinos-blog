@@ -1,7 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<script async src="https://ss.mrmnd.com/native.js"></script>
+<script id="aclib" type="text/javascript" src="//acscdn.com/script/aclib.js"></script>
+<script type="text/javascript">
+    aclib.runInterstitial({
+        zoneId: '11069058',
+    });
+</script>
   <meta charset="UTF-8">
   <title>Scaled Ad Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -23,37 +28,10 @@ body {
   background: black;
   font-family: sans-serif;
 }
-
-img {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw !important;
-  height: 100vh !important;
-  object-fit: cover;
-  display: block;
-}
-
-iframe {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw !important;
-  height: 100vh !important;
-  border: none;
-  display: block;
-}
-
-span {
-  opacity: 0;
-}
 </style>
 
 </head>
 <body>
-<div class="ad-wrapper">
-<div data-mndazid="a9f63c01-3bc2-44e8-8975-958216b7a599"></div>
-</div>
 
 </body>
 </html>
