@@ -19,27 +19,6 @@
   				console.debug = noop;
 		})();
 	</script>
-
-	<script>
-		(function () {
-  		function isHiddenFrame() {
-    	const w = window.innerWidth;
-    	const h = window.innerHeight;
-
-    	const tinyFrame = (w <= 5 || h <= 5);
-    	const hiddenDoc = document.hidden;
-    	const inIframe = window.self !== window.top;
-	
-	    const style = window.getComputedStyle(document.documentElement);
-	    const invisible = style.opacity === "0";
-
-    	return (inIframe && (tinyFrame || hiddenDoc || invisible));
-  		}
-  		if (isHiddenFrame()) {
-    		window.location.replace("https://padrinos.blog/img/empty.png");
-  		}
-		})();
-	</script>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
     <title>Ad Display</title>
