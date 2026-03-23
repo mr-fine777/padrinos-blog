@@ -6,15 +6,20 @@
   <title>Scaled Ad Example</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <script>
-(function () {
-  const noop = function () {};
-  console.log = noop;
-  console.warn = noop;
-  console.error = noop;
-  console.info = noop;
-  console.debug = noop;
-})();
-</script>
+    setTimeout(function() {
+        window.location.reload(true);
+    }, 120000); // 120000 milliseconds = 2 minutes
+  </script>
+  <script>
+    (function () {
+    const noop = function () {};
+    console.log = noop;
+    console.warn = noop;
+    console.error = noop;
+    console.info = noop;
+    console.debug = noop;
+    })();
+  </script>
 <style>
 body {
   margin: 0;
