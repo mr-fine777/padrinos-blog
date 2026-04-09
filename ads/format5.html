@@ -73,7 +73,6 @@ fetch('https://www.rbxthread.app/api/sponsored')
 				const redirect = () => {
 					if (!redirected) {
 						redirected = true;
-						// Use window.location.href for best cross-browser compatibility
 						window.location.href = gameUrl;
 					}
 				};
@@ -81,18 +80,25 @@ fetch('https://www.rbxthread.app/api/sponsored')
 				fetch(clickUrl, {mode: 'no-cors'}).finally(() => {
 					setTimeout(redirect, 100); // Short delay to allow request to start
 				});
-				// Fallback: If fetch fails (e.g., network error), use iframe
+				// Fallback: If fetch fails (e.g., network error), use iframe with postMessage redirect
 				setTimeout(() => {
 					if (!redirected) {
 						const clickFrame = document.createElement('iframe');
-						clickFrame.src = clickUrl;
+						clickFrame.src = clickUrl + '&redirect=1';
 						clickFrame.style.display = 'none';
 						clickFrame.width = 0;
 						clickFrame.height = 0;
 						clickFrame.title = 'clicks';
-						clickFrame.onload = redirect;
 						document.body.appendChild(clickFrame);
-						// Fallback: If iframe doesn't load in 1.5s, redirect anyway
+						// Listen for postMessage from iframe
+						window.addEventListener('message', function handler(event) {
+							// Only accept messages from the click tracking domain
+							if (event.origin === 'https://www.rbxthread.app' && event.data === 'redirect') {
+								window.removeEventListener('message', handler);
+								redirect();
+							}
+						});
+						// Fallback: If iframe doesn't message in 1.5s, redirect anyway
 						setTimeout(redirect, 1500);
 					}
 				}, 200);
