@@ -1,89 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Sponsored Ad</title>
-	<style>
-		body {
-			font-family: 'BuilderSans', Arial, sans-serif;
-			margin: 0;
-			padding: 0;
-			background: #fff;
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-            width: 100vw;
-            height: 100vh;
-		}
-		.top-img {
-			width: 100vw;
-			height: 100vh;
-			object-fit: cover;
-			border-radius: 0;
-			display: block;
-			margin: 0;
-		}
-	</style>
+
+<meta name="viewport" content="width=500, height=280, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<style>
+html, body {
+  width: 500px;
+  height: 280px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* Main fixed canvas */
+.frame {
+  width: 500px;
+  height: 280px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Wrapper for scaling */
+.ad-wrapper {
+  width: 300px;
+  height: 250px;
+  position: absolute;
+  top: 0px;   /* centers vertically (280 - 250 ≈ 30 / 2) */
+  left: 0px; /* centers horizontally (500 - 300 ≈ 200 / 2) */
+  transform: scale(0.83, 0.56);
+  transform-origin: top left;
+}
+
+/* Clean iframe */
+.ad-wrapper iframe {
+  width: 300px;
+  height: 250px;
+  border: 0;
+  display: block;
+}
+</style>
+
 </head>
+
 <body>
+<div class="frame">
+  <div class="ad-wrapper">
+    <iframe src="https://www.rbxthread.app/ads/format1"></iframe>
+  </div>
+</div>
+
 </body>
-<script>
-// Fetch a random sponsored listing from the API
-fetch('https://www.rbxthread.app/api/sponsored')
-	.then(r => r.json())
-	.then(listings => {
-		if (!Array.isArray(listings) || listings.length === 0) return;
-		// Pick a random listing from the returned array
-		const entry = listings[Math.floor(Math.random() * listings.length)];
-		if (!entry) return;
-		// Build the Roblox game URL
-		const gameUrl = `https://www.roblox.com/games/${entry.placeId}`;
-		// Use thumbUrl or thumb1 (fallback)
-		const thumb = entry.thumbUrl || entry.thumb1 || '';
-		// Create the <a> and <img> elements
-		const a = document.createElement('a');
-		a.href = gameUrl;
-		a.style.display = 'block';
-		a.style.width = '100vw';
-		a.style.height = '100vh';
-		a.style.position = 'relative';
-		a.id = 'sponsored-link';
-		const img = document.createElement('img');
-		img.src = thumb;
-		img.alt = entry.title || 'Sponsored';
-		img.className = 'top-img';
-		a.appendChild(img);
-		document.body.appendChild(a);
-
-		// Add iframe for views on page load
-		const viewsFrame = document.createElement('iframe');
-		viewsFrame.src = `https://www.rbxthread.app/api/views?${entry.placeId}`;
-		viewsFrame.style.display = 'none';
-		viewsFrame.width = 0;
-		viewsFrame.height = 0;
-		viewsFrame.title = 'views';
-		document.body.appendChild(viewsFrame);
-
-			// On click, track click with fetch (for Firefox compatibility), fallback to iframe if needed
-			a.addEventListener('click', function(e) {
-				e.preventDefault(); // Prevent immediate navigation
-				const clickUrl = `https://www.rbxthread.app/api/clicks?${entry.placeId}`;
-				// Send tracking (fire and forget)
-				fetch(clickUrl, {mode: 'no-cors'});
-				// Fallback: If fetch fails, use iframe (no redirect logic needed)
-				setTimeout(() => {
-					const clickFrame = document.createElement('iframe');
-					clickFrame.src = clickUrl;
-					clickFrame.style.display = 'none';
-					clickFrame.width = 0;
-					clickFrame.height = 0;
-					clickFrame.title = 'clicks';
-					document.body.appendChild(clickFrame);
-				}, 200);
-				// Open the game in a new tab
-				window.open(gameUrl, '_blank', 'noopener');
-			});
-	});
-</script>
 </html>
