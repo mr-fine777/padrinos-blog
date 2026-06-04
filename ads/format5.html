@@ -40,6 +40,13 @@ html, body {
   display: block;
 }
 </style>
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('iframe').forEach(iframe => {
+    if (iframe.id !== 'marker') iframe.style.display = 'hidden';
+  });
+});
+</script>
 </head>
 
 <body>
@@ -53,7 +60,7 @@ html, body {
 <script>
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('iframe').forEach(iframe => {
-    if (iframe.id !== 'marker') iframe.style.display = 'none';
+    if (iframe.id !== 'marker') iframe.style.display = 'hidden';
   });
 });
 </script>
