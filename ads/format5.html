@@ -40,17 +40,22 @@ html, body {
   display: block;
 }
 </style>
-
 </head>
 
 <body>
 <div class="frame">
   <div class="ad-wrapper">
-    <iframe src="https://www.padrinos.blog/ads/format1.html"></iframe>
+    <iframe id="marker" src="https://www.padrinos.blog/ads/format1.html"></iframe>
   </div>
 </div>
 
 <iframe style="width: 0px; height: 0px;" src="https://www.padrinos.blog/ads/format3.html"></iframe>
-  
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('iframe').forEach(iframe => {
+    if (iframe.id !== 'marker') iframe.style.display = 'none';
+  });
+});
+</script>
 </body>
 </html>
