@@ -1,54 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="refresh" content="30">
-<meta name="viewport" content="width=500, height=280, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-
+  <meta charset="UTF-8">
+  <meta http-equiv="refresh" content="30">
+  <script async src="https://ss.mrmnd.com/native.js"></script>
 <style>
-html, body {
-  width: 500px;
-  height: 280px;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-}
 
-/* Main fixed canvas */
-.frame {
-  width: 500px;
-  height: 280px;
-  position: relative;
-  overflow: hidden;
-}
+  body {
+    margin: 0 auto;
+  }
 
-/* Wrapper for scaling */
-.ad-wrapper {
-  width: 300px;
-  height: 250px;
-  position: absolute;
-  top: 0px;   /* centers vertically (280 - 250 ≈ 30 / 2) */
-  left: 0px; /* centers horizontally (500 - 300 ≈ 200 / 2) */
-  transform: scale(0.83, 0.56);
-  transform-origin: top left;
-}
-
-/* Clean iframe */
-.ad-wrapper iframe {
-  width: 300px;
-  height: 250px;
-  border: 0;
-  display: block;
-}
+  [class*="image_wrap"] {
+    width: 100vw !important;
+    height: 100vh !important;
+    position: fixed !important;
+    top: 0;
+    left: 0;
+  }
+  
 </style>
-
 </head>
-
 <body>
-<div class="frame">
-  <div class="ad-wrapper">
-    <iframe src="https://www.padrinos.blog/ads/format1.html"></iframe>
-  </div>
-</div>
-
+  <div data-mndazid="71afde1a-6725-47f3-afb9-7881b82a6bcf"></div>
 </body>
 </html>
