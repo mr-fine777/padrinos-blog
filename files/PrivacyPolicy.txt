@@ -1,0 +1,104 @@
+PRIVACY POLICY FOR CROSSHARE OVERLAY APPLICATION
+
+Last Updated: August 30, 2026
+
+1. INTRODUCTION
+This Privacy Policy describes how the CrossHare Overlay Application ("the Application," "we," "us," or "our") collects, uses, and protects information when you use our software. Please read this policy carefully to understand our privacy practices.
+
+2. DATA COLLECTION
+
+The Application collects and processes the following types of information:
+
+2.1 Configuration Data
+- Overlay position adjustments (adjust_x, adjust_y)
+- Overlay size preferences (8px, 12px, 16px, 24px, 32px)
+- Shape selection (6 available shapes)
+- Color preferences (9 color options)
+- This data is stored locally on your computer in JSON configuration files
+
+2.2 System Information
+- Hotkey state detection (F2, F3 keys) for application control
+- Screen resolution for window positioning
+- Window state and visibility status
+All monitoring is performed locally on your device.
+
+2.3 DLL Library Operations
+- The Application loads a native library (tm.dll) during initialization
+- A JWT token is used for library authentication
+- The library may transmit usage or telemetry data - review tm.dll documentation for details
+- This operation occurs only when the DLL initialization is successful
+
+3. DATA STORAGE
+
+3.1 Local Storage
+- All user preferences and configurations are stored locally on your computer
+- Storage location: %USERPROFILE%\Documents\CrossHare Configs\
+- Configuration files are stored in standard JSON format
+- No data is uploaded to remote servers by default
+
+3.2 Configuration Management
+- You can save multiple configuration profiles
+- You can load previously saved configurations
+- You can reset to default settings at any time
+
+4. DATA USAGE
+
+The Application uses collected data only for:
+- Displaying and positioning the overlay correctly
+- Remembering your preferences between sessions
+- Responding to your hotkey commands
+- Maintaining application functionality
+
+5. THIRD-PARTY COMPONENTS
+
+5.1 External Libraries
+The Application relies on the following open-source components:
+- PIL (Python Imaging Library): Image processing
+- tkinter: GUI framework (included with Python)
+- pystray: System tray functionality (optional)
+- ctypes: System interaction (Python standard library)
+
+5.2 DLL Library (tm.dll)
+- This closed-source native library is bundled with the Application
+- It handles additional functionality upon initialization
+- It uses a JWT token for authentication
+- Please refer to the accompanying tm.dll documentation for its privacy practices
+
+6. DATA SECURITY
+
+6.1 Local Protection
+- All data remains on your local device
+- Configuration files are stored in a user-accessible directory
+- You have full control over your configuration files and can delete them at any time
+
+6.2 No Network Transmission
+- The Application does not transmit your overlay preferences to remote servers
+- Exception: The DLL library may have its own network behavior (see section 5.2)
+
+7. USER RIGHTS
+
+You have the right to:
+- Access your stored configuration data at any time
+- Modify or delete your configurations
+- Reset the Application to default settings
+- Uninstall the Application and remove all associated data
+
+8. DATA RETENTION
+
+Configuration data is retained for as long as the Application is installed on your device. Uninstalling the Application does not automatically delete configuration files - you may manually delete the CrossHare Configs folder from your Documents directory.
+
+9. CHANGES TO THIS PRIVACY POLICY
+
+We may update this Privacy Policy from time to time. Changes will be effective immediately upon posting the updated policy. Your continued use of the Application after any modifications constitutes your acceptance of the updated Privacy Policy.
+
+10. DISCLAIMER
+
+This Privacy Policy applies only to the CrossHare Overlay Application. Third-party components, libraries, and the bundled DLL library may have their own privacy policies and data handling practices. Please review their respective documentation for detailed information about their privacy practices.
+
+11. CONTACT INFORMATION
+
+For questions, concerns, or requests regarding this Privacy Policy or the Application's privacy practices, please refer to the project documentation or contact information provided with this software.
+
+---
+
+By using the CrossHare Overlay Application, you acknowledge that you have read and understood this Privacy Policy and agree to its terms.
